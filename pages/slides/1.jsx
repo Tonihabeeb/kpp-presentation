@@ -6,6 +6,9 @@ export default function Slide1() {
     <SlideLayout nextHref="/slides/2">
       <div className="slide-content">
         <div className="title-section">
+          <div className="logo-section">
+            <img src="/images/deep-engineering-logo.png" alt="Deep Engineering Co." className="company-logo" />
+          </div>
           <h1>Kinetic Power Plant (KPP) Technology</h1>
           <h2>Technical Overview</h2>
           <p className="subtitle">Prepared by Deep Engineering Co.</p>
@@ -41,7 +44,11 @@ export default function Slide1() {
           </div>
           
           <div className="intro-image">
-            <div className="image-placeholder">
+            <div className="main-tower-placeholder">
+              <h4>KPP Tower System</h4>
+              <p>100KW demonstration unit</p>
+            </div>
+            <div className="image-caption">
               <h4>KPP Tower System</h4>
               <p>100KW demonstration unit</p>
             </div>
@@ -55,8 +62,6 @@ export default function Slide1() {
     </SlideLayout>
   );
 }
-
-<style jsx>{`
   .slide {
     padding: 2rem;
     text-align: center;
@@ -66,9 +71,88 @@ export default function Slide1() {
     margin-top: 2rem;
   }
   
-  .key-points {
-    text-align: left;
-    max-width: 600px;
-    margin: 2rem auto;
+  .logo-section {
+    margin-bottom: 1rem;
   }
-`}</style> 
+  
+  .company-logo {
+    width: 120px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  
+
+  
+  .main-tower-placeholder {
+    width: 400px;
+    height: 300px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .main-tower-placeholder h4 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+  }
+  
+  .main-tower-placeholder p {
+    margin: 0;
+    color: #666;
+  }
+  
+  .intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 0;
+  }
+  
+  .intro-text {
+    text-align: left;
+  }
+  
+  .key-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .feature {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+  }
+  
+  .intro-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-tower-image {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .image-caption {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .company-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #e9ecef;
+    border-radius: 8px;
+  } 

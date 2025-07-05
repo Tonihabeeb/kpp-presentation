@@ -1,4 +1,5 @@
 import SlideLayout from '../../components/SlideLayout';
+import Image from 'next/image';
 
 export default function Slide4() {
   return (
@@ -47,6 +48,16 @@ export default function Slide4() {
             </div>
           </div>
           
+          <div className="development-visual">
+            <Image 
+              src="/images/Screenshot-2025-05-12-104033.avif" 
+              alt="Development Progress" 
+              width={500} 
+              height={300}
+              className="development-image"
+            />
+          </div>
+          
           <div className="patent-section">
             <h3>📋 Patent Protection</h3>
             <div className="patent-details">
@@ -71,25 +82,37 @@ export default function Slide4() {
           
           <div className="global-footprint">
             <h3>🌍 Global Footprint</h3>
-            <div className="footprint-details">
-              <p>
-                Kinetic Power Plant technology is being successfully deployed across multiple regions. 
-                These installations demonstrate the system's versatility and global applicability.
-              </p>
+            <div className="footprint-content">
+              <div className="footprint-text">
+                <p>
+                  Kinetic Power Plant technology is being successfully deployed across multiple regions. 
+                  These installations demonstrate the system's versatility and global applicability.
+                </p>
+                
+                <div className="deployment-locations">
+                  <div className="location">
+                    <h4>🇩🇪 Germany</h4>
+                    <p>Initial prototype testing and validation</p>
+                  </div>
+                  <div className="location">
+                    <h4>🇷🇸 Serbia</h4>
+                    <p>Design refinements and optimization</p>
+                  </div>
+                  <div className="location">
+                    <h4>🌐 Global</h4>
+                    <p>Multiple regional deployments in progress</p>
+                  </div>
+                </div>
+              </div>
               
-              <div className="deployment-locations">
-                <div className="location">
-                  <h4>🇩🇪 Germany</h4>
-                  <p>Initial prototype testing and validation</p>
-                </div>
-                <div className="location">
-                  <h4>🇷🇸 Serbia</h4>
-                  <p>Design refinements and optimization</p>
-                </div>
-                <div className="location">
-                  <h4>🌐 Global</h4>
-                  <p>Multiple regional deployments in progress</p>
-                </div>
+              <div className="footprint-image">
+                <Image 
+                  src="/images/Screenshot-2025-05-12-115303.avif" 
+                  alt="Global Deployment Data" 
+                  width={400} 
+                  height={250}
+                  className="global-image"
+                />
               </div>
             </div>
           </div>
@@ -97,4 +120,106 @@ export default function Slide4() {
       </div>
     </SlideLayout>
   );
-} 
+}
+    padding: 2rem;
+  }
+  
+  .slide-content {
+    margin-top: 2rem;
+  }
+  
+  .development-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .timeline {
+    position: relative;
+    margin: 2rem 0;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #007bff;
+  }
+  
+  .timeline-item {
+    display: flex;
+    margin: 2rem 0;
+    position: relative;
+  }
+  
+  .year {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 100px;
+    text-align: center;
+    margin-right: 2rem;
+  }
+  
+  .content {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 1;
+  }
+  
+  .development-visual {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .development-image {
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  
+  .patent-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .patent-features ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .footprint-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  
+  .deployment-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .location {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .global-image {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  } 

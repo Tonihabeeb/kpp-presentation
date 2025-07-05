@@ -1,5 +1,6 @@
 import SlideLayout from '../../components/SlideLayout';
 import ExampleChart from '../../components/ExampleChart';
+import Image from 'next/image';
 
 export default function Slide3() {
   return (
@@ -41,6 +42,13 @@ export default function Slide3() {
             <h3>🔧 Technical Specifications</h3>
             <div className="specs-grid">
               <div className="spec-category">
+                <Image 
+                  src="/images/generator.avif" 
+                  alt="KPP Generator System" 
+                  width={300} 
+                  height={200}
+                  className="spec-image"
+                />
                 <h4>System Components</h4>
                 <ul>
                   <li><strong>Floaters:</strong> 66 hollow steel containers</li>
@@ -51,6 +59,13 @@ export default function Slide3() {
               </div>
               
               <div className="spec-category">
+                <Image 
+                  src="/images/Screenshot-2025-05-12-103656.avif" 
+                  alt="Performance Data" 
+                  width={300} 
+                  height={200}
+                  className="spec-image"
+                />
                 <h4>Physics Principles</h4>
                 <ul>
                   <li><strong>Archimedes' Principle:</strong> Buoyancy force generation</li>
@@ -64,12 +79,25 @@ export default function Slide3() {
           
           <div className="energy-analysis">
             <h3>⚡ Energy Analysis</h3>
-            <p>
-              The system implements well-known physics principles (buoyancy and gravity) in an innovative configuration. 
-              No laws of physics are violated – the system leverages the potential energy difference between water and air 
-              within Earth's gravity. The math shows that careful use of buoyancy can indeed yield net positive energy 
-              when the system is designed to minimize losses and cleverly reuse energy.
-            </p>
+            <div className="analysis-content">
+              <div className="analysis-text">
+                <p>
+                  The system implements well-known physics principles (buoyancy and gravity) in an innovative configuration. 
+                  No laws of physics are violated – the system leverages the potential energy difference between water and air 
+                  within Earth's gravity. The math shows that careful use of buoyancy can indeed yield net positive energy 
+                  when the system is designed to minimize losses and cleverly reuse energy.
+                </p>
+              </div>
+              <div className="analysis-image">
+                <Image 
+                  src="/images/Screenshot-2025-05-12-103744.avif" 
+                  alt="Technical Specifications" 
+                  width={400} 
+                  height={250}
+                  className="analysis-img"
+                />
+              </div>
+            </div>
           </div>
           
           <div className="chart-section">
@@ -80,4 +108,74 @@ export default function Slide3() {
       </div>
     </SlideLayout>
   );
-} 
+}
+    padding: 2rem;
+  }
+  
+  .slide-content {
+    margin-top: 2rem;
+  }
+  
+  .performance-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .metrics-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .metric-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .spec-category {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .spec-image {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .analysis-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .analysis-img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .chart-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+  } 

@@ -27,21 +27,49 @@ export default function Slide2() {
             <h3>⚙️ Core System Components</h3>
             <div className="components-grid">
               <div className="component">
+                <Image 
+                  src="/images/tube.avif" 
+                  alt="Floaters and Chain System" 
+                  width={200} 
+                  height={150}
+                  className="component-image"
+                />
                 <h4>Floaters (Buoyancy Bodies)</h4>
                 <p>Typically 66 hollow steel containers attached to an endless chain loop. When filled with air, a floater becomes buoyant and rises. When filled with water, it sinks.</p>
               </div>
               
               <div className="component">
+                <Image 
+                  src="/images/air-system.avif" 
+                  alt="Air System Components" 
+                  width={200} 
+                  height={150}
+                  className="component-image"
+                />
                 <h4>Endless Chain Loop</h4>
                 <p>Continuous chain system that carries floaters through the buoyancy cycle, with 180° rotation points at top and bottom.</p>
               </div>
               
               <div className="component">
+                <Image 
+                  src="/images/air-compressor.avif" 
+                  alt="Air Compressor System" 
+                  width={200} 
+                  height={150}
+                  className="component-image"
+                />
                 <h4>Air Compressor System</h4>
                 <p>Supplies compressed air to KPP modules for buoyancy control. Consumes ~1% of net KPP power output.</p>
               </div>
               
               <div className="component">
+                <Image 
+                  src="/images/cabinet.avif" 
+                  alt="Control Cabinet" 
+                  width={200} 
+                  height={150}
+                  className="component-image"
+                />
                 <h4>Generator & Power Output</h4>
                 <p>Mechanical rotation from the chain drives generators to produce electricity. System designed for 100KW+ output capacity.</p>
               </div>
@@ -74,8 +102,6 @@ export default function Slide2() {
     </SlideLayout>
   );
 }
-
-<style jsx>{`
   .slide {
     padding: 2rem;
   }
@@ -84,30 +110,70 @@ export default function Slide2() {
     margin-top: 2rem;
   }
   
-  .two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .architecture-content {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    align-items: start;
   }
   
-  .left-column {
-    text-align: left;
+  .physics-principles {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
   }
   
-  .right-column {
+  .principle {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+    border-left: 4px solid #28a745;
+  }
+  
+  .components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .component {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .component-image {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .cycle-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .step {
+    background: #e3f2fd;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .step-number {
+    background: #2196f3;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-placeholder {
-    width: 300px;
-    height: 200px;
-    border: 2px dashed #ccc;
-    display: flex;
     align-items: center;
     justify-content: center;
-    background: #f5f5f5;
-  }
-`}</style> 
+    margin: 0 auto 0.5rem;
+    font-weight: bold;
+  } 

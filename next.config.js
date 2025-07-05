@@ -6,6 +6,15 @@ const nextConfig = {
   },
   images: {
     domains: ['localhost'],
+    unoptimized: true,
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/:path*',
+      },
+    ];
   },
 };
 

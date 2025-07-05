@@ -1,4 +1,5 @@
 import SlideLayout from '../../components/SlideLayout';
+import Image from 'next/image';
 
 export default function Slide6() {
   return (
@@ -31,6 +32,28 @@ export default function Slide6() {
               <div className="takeaway">
                 <h4>🌍 Global Scalability</h4>
                 <p>Successfully deployed across multiple regions, demonstrating versatility and applicability for various market segments.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="future-vision">
+            <h3>🔮 Future Vision</h3>
+            <div className="vision-content">
+              <div className="vision-text">
+                <p>
+                  Kinetic Power Plant technology represents a paradigm shift in sustainable energy generation. 
+                  By harnessing the fundamental forces of nature through innovative engineering, we can create 
+                  a cleaner, more sustainable future for generations to come.
+                </p>
+              </div>
+              <div className="vision-image">
+                <Image 
+                  src="/images/dyzyn-dkhly-llqaa.avif" 
+                  alt="Future Vision" 
+                  width={400} 
+                  height={250}
+                  className="future-image"
+                />
               </div>
             </div>
           </div>
@@ -81,13 +104,24 @@ export default function Slide6() {
           
           <div className="contact-section">
             <h3>📞 Contact Information</h3>
-            <div className="contact-details">
-              <p><strong>Deep Engineering Co.</strong></p>
-              <p>Global patent-holder of Kinetic Power Plant (KPP®) technology</p>
-              <div className="contact-info">
-                <p>🌐 <strong>Website:</strong> [Your Website]</p>
-                <p>📧 <strong>Email:</strong> [Your Email]</p>
-                <p>📱 <strong>Phone:</strong> [Your Phone]</p>
+            <div className="contact-content">
+              <div className="contact-details">
+                <p><strong>Deep Engineering Co.</strong></p>
+                <p>Global patent-holder of Kinetic Power Plant (KPP®) technology</p>
+                <div className="contact-info">
+                  <p>🌐 <strong>Website:</strong> [Your Website]</p>
+                  <p>📧 <strong>Email:</strong> [Your Email]</p>
+                  <p>📱 <strong>Phone:</strong> [Your Phone]</p>
+                </div>
+              </div>
+              <div className="contact-image">
+                <Image 
+                  src="/images/EEcUFDJ3mSLaKA_GrxCqI.avif" 
+                  alt="Contact Information" 
+                  width={300} 
+                  height={200}
+                  className="contact-img"
+                />
               </div>
             </div>
           </div>
@@ -99,4 +133,108 @@ export default function Slide6() {
       </div>
     </SlideLayout>
   );
-} 
+}
+  .slide {
+    padding: 2rem;
+  }
+  
+  .slide-content {
+    margin-top: 2rem;
+  }
+  
+  .conclusion-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .takeaways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .takeaway {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .vision-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .future-image {
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  
+  .advantages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .advantage {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid #28a745;
+  }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .step {
+    background: #e3f2fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 4px solid #2196f3;
+  }
+  
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .contact-details {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .contact-info {
+    margin-top: 1rem;
+  }
+  
+  .contact-img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .footer-note {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    font-style: italic;
+  } 
