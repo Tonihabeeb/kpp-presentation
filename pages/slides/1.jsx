@@ -1,49 +1,47 @@
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import SlideLayout from '../../components/SlideLayout';
+import Image from 'next/image';
 
 export default function Slide1() {
-  const router = useRouter();
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'ArrowRight') {
-      router.push('/slides/2');
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress);
-    return () => document.removeEventListener('keydown', handleKeyPress);
-  }, []);
-
   return (
-    <div className="slide">
-      <h1>Kinetic Power Plant (KPP) Technology</h1>
-      <h2>Technical Overview</h2>
-      
+    <SlideLayout nextHref="/slides/2">
       <div className="slide-content">
-        <p>Welcome to the KPP Technology presentation</p>
+        <div className="title-section">
+          <h1>Kinetic Power Plant (KPP) Technology</h1>
+          <h2>Technical Overview</h2>
+          <p className="subtitle">Prepared by Deep Engineering Co.</p>
+        </div>
         
-        <div className="key-points">
-          <h3>Key Topics:</h3>
-          <ul>
-            <li>Technology Overview</li>
-            <li>System Architecture</li>
-            <li>Performance Metrics</li>
-            <li>Implementation Strategy</li>
-          </ul>
+        <div className="intro-content">
+          <div className="intro-text">
+            <h3>Revolutionary Energy Generation</h3>
+            <p>
+              The Kinetic Power Plant represents a breakthrough in sustainable energy technology, 
+              harnessing kinetic energy through innovative mechanical systems to generate clean, 
+              reliable electricity.
+            </p>
+            
+            <div className="key-features">
+              <h4>Key Features:</h4>
+              <ul>
+                <li>Zero-emission energy generation</li>
+                <li>High efficiency mechanical systems</li>
+                <li>Scalable from 5kW to 100kW+</li>
+                <li>Low maintenance requirements</li>
+                <li>24/7 continuous operation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="intro-visual">
+            <div className="placeholder-image">
+              <div className="image-placeholder">
+                <span>KPP Tower Visualization</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div className="slide-navigation">
-        <span className="slide-counter">1 / 10</span>
-        <button 
-          onClick={() => router.push('/slides/2')}
-          className="nav-button next"
-        >
-          Next →
-        </button>
-      </div>
-    </div>
+    </SlideLayout>
   );
 }
 

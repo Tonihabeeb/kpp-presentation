@@ -1,74 +1,78 @@
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import SlideLayout from '../../components/SlideLayout';
 import ExampleChart from '../../components/ExampleChart';
 
 export default function Slide3() {
-  const router = useRouter();
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'ArrowLeft') {
-      router.push('/slides/2');
-    } else if (e.key === 'ArrowRight') {
-      router.push('/slides/4');
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress);
-    return () => document.removeEventListener('keydown', handleKeyPress);
-  }, []);
-
   return (
-    <div className="slide">
-      <h1>Performance Metrics</h1>
-      
+    <SlideLayout prevHref="/slides/2" nextHref="/slides/4">
       <div className="slide-content">
-        <div className="metrics-grid">
-          <div className="metric-card">
-            <h3>Efficiency</h3>
-            <div className="metric-value">92%</div>
-            <p>Average conversion efficiency</p>
-          </div>
-          
-          <div className="metric-card">
-            <h3>Output</h3>
-            <div className="metric-value">150 MW</div>
-            <p>Peak power generation</p>
-          </div>
-          
-          <div className="metric-card">
-            <h3>Cost</h3>
-            <div className="metric-value">$38/MWh</div>
-            <p>Levelized cost of energy</p>
-          </div>
-          
-          <div className="metric-card">
-            <h3>Availability</h3>
-            <div className="metric-value">98.5%</div>
-            <p>System uptime</p>
-          </div>
+        <div className="title-section">
+          <h2>Performance Metrics & Analysis</h2>
+          <p className="subtitle">Real-world Performance Data</p>
         </div>
         
-        <div className="chart-section">
-          <ExampleChart type="line" title="Monthly Performance Trends" />
+        <div className="performance-content">
+          <div className="metrics-overview">
+            <div className="metric-card">
+              <h4>Energy Output</h4>
+              <div className="metric-value">85-92%</div>
+              <p>Conversion Efficiency</p>
+            </div>
+            
+            <div className="metric-card">
+              <h4>Power Generation</h4>
+              <div className="metric-value">5-100kW</div>
+              <p>Scalable Output Range</p>
+            </div>
+            
+            <div className="metric-card">
+              <h4>Uptime</h4>
+              <div className="metric-value">99.5%</div>
+              <p>System Reliability</p>
+            </div>
+            
+            <div className="metric-card">
+              <h4>ROI</h4>
+              <div className="metric-value">3-5 years</div>
+              <p>Return on Investment</p>
+            </div>
+          </div>
+          
+          <div className="chart-section">
+            <h3>Performance Trends</h3>
+            <div className="chart-container">
+              <ExampleChart />
+            </div>
+            <p className="chart-description">
+              Monthly performance data showing consistent energy output and efficiency improvements over time.
+            </p>
+          </div>
+          
+          <div className="comparison-section">
+            <h3>Comparison with Traditional Energy Sources</h3>
+            <div className="comparison-grid">
+              <div className="comparison-item">
+                <h4>KPP Technology</h4>
+                <ul>
+                  <li>Zero emissions</li>
+                  <li>Low maintenance</li>
+                  <li>Scalable</li>
+                  <li>Renewable</li>
+                </ul>
+              </div>
+              
+              <div className="comparison-item">
+                <h4>Traditional Sources</h4>
+                <ul>
+                  <li>High emissions</li>
+                  <li>Regular maintenance</li>
+                  <li>Fixed capacity</li>
+                  <li>Non-renewable</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <div className="slide-navigation">
-        <button 
-          onClick={() => router.push('/slides/2')}
-          className="nav-button prev"
-        >
-          ← Previous
-        </button>
-        <span className="slide-counter">3 / 10</span>
-        <button 
-          onClick={() => router.push('/slides/4')}
-          className="nav-button next"
-        >
-          Next →
-        </button>
-      </div>
-    </div>
+    </SlideLayout>
   );
 } 
