@@ -13,32 +13,43 @@ export default function Slide1() {
         
         <div className="intro-content">
           <div className="intro-text">
-            <h3>Revolutionary Energy Generation</h3>
+            <h3>Revolutionary Buoyancy-Driven Energy Generation</h3>
             <p>
-              The Kinetic Power Plant represents a breakthrough in sustainable energy technology, 
-              harnessing kinetic energy through innovative mechanical systems to generate clean, 
-              reliable electricity.
+              Kinetic Power Plant (KPP) is an innovative power generation system that uses 
+              <strong> buoyancy and gravity instead of fuel</strong>. It produces electricity 24/7 with 
+              <strong> no fuel, no combustion, and zero emissions</strong>.
             </p>
             
             <div className="key-features">
-              <h4>Key Features:</h4>
-              <ul>
-                <li>Zero-emission energy generation</li>
-                <li>High efficiency mechanical systems</li>
-                <li>Scalable from 5kW to 100kW+</li>
-                <li>Low maintenance requirements</li>
-                <li>24/7 continuous operation</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="intro-visual">
-            <div className="placeholder-image">
-              <div className="image-placeholder">
-                <span>KPP Tower Visualization</span>
+              <div className="feature">
+                <h4>🌊 Buoyancy-Driven</h4>
+                <p>Uses Archimedes' Principle to generate continuous motion</p>
+              </div>
+              <div className="feature">
+                <h4>⚡ 24/7 Operation</h4>
+                <p>Continuous power generation without fuel requirements</p>
+              </div>
+              <div className="feature">
+                <h4>🌱 Zero Emissions</h4>
+                <p>Clean energy production with no combustion or pollution</p>
+              </div>
+              <div className="feature">
+                <h4>🔬 Physics-Based</h4>
+                <p>Leverages well-known physics principles in innovative configuration</p>
               </div>
             </div>
           </div>
+          
+          <div className="intro-image">
+            <div className="image-placeholder">
+              <h4>KPP Tower System</h4>
+              <p>100KW demonstration unit</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="company-info">
+          <p><strong>Deep Engineering Co.</strong> - Global patent-holder of the Kinetic Power Plant (KPP®) buoyancy-drive technology</p>
         </div>
       </div>
     </SlideLayout>
