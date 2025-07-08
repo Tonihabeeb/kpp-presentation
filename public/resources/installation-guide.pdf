@@ -1,0 +1,96 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 450
+>>
+stream
+BT
+/F1 20 Tf
+50 750 Td
+(KPP Installation Guide) Tj
+0 -40 Td
+/F1 12 Tf
+(Step-by-Step Installation Process) Tj
+0 -30 Td
+(Phase 1: Site Preparation) Tj
+0 -20 Td
+(• Site assessment and foundation requirements) Tj
+0 -20 Td
+(• Electrical infrastructure planning) Tj
+0 -20 Td
+(• Permits and regulatory compliance) Tj
+0 -30 Td
+(Phase 2: System Assembly) Tj
+0 -20 Td
+(• Component delivery and inspection) Tj
+0 -20 Td
+(• Mechanical assembly procedures) Tj
+0 -20 Td
+(• Electrical connections and controls) Tj
+0 -30 Td
+(Phase 3: Testing and Commissioning) Tj
+0 -20 Td
+(• Performance validation tests) Tj
+0 -20 Td
+(• Safety system verification) Tj
+0 -20 Td
+(• Grid connection and synchronization) Tj
+0 -30 Td
+(Installation Time: 4-6 weeks typical) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000274 00000 n 
+0000000776 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+854
+%%EOF

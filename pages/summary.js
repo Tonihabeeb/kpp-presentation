@@ -159,6 +159,74 @@ export default function Summary() {
               </div>
             </div>
           </div>
+
+          <div className={`company-section ${isVisible ? 'animate-in' : ''}`}>
+            <h2 className="section-title">About Deep Engineering</h2>
+            <div className="company-overview">
+              <div className="company-text">
+                <p className="company-intro">
+                  Deep Engineering is a pioneering technology company specializing in revolutionary 
+                  Kinetic Power Plant (KPP) technology and comprehensive engineering solutions. 
+                  We provide integrated services with high expertise to ensure business growth 
+                  and increased profitability.
+                </p>
+                
+                <div className="company-services">
+                  <h3>Our Core Services</h3>
+                  <div className="services-grid">
+                    <div className="service-item">
+                      <div className="service-icon">⚡</div>
+                      <h4>KPP Solutions</h4>
+                      <p>Innovative approach to clean, continuous renewable electricity with significant market potential in mature and emerging markets.</p>
+                    </div>
+                    <div className="service-item">
+                      <div className="service-icon">🛢️</div>
+                      <h4>Oil & Gas Services</h4>
+                      <p>Efficient team cooperation providing equipment, testing, and materials needed for successful project completion.</p>
+                    </div>
+                    <div className="service-item">
+                      <div className="service-icon">💼</div>
+                      <h4>Business Consultancy</h4>
+                      <p>Experienced team providing tailored consultations for efficient strategies and expert advice facilitating business growth.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="company-projects">
+                  <h3>Major Projects</h3>
+                  <div className="projects-list">
+                    <div className="project-item">
+                      <div className="project-details">
+                        <h4>300 MW KPP Plant - Kurdistan</h4>
+                        <p>Partnership with Ministry of Electricity, Kurdistan Regional Government</p>
+                      </div>
+                    </div>
+                    <div className="project-item">
+                      <div className="project-details">
+                        <h4>90 MW KPP Plant - Iraq</h4>
+                        <p>Collaboration with Board of Investment, Al-Muthana City, Iraq</p>
+                      </div>
+                    </div>
+                    <div className="project-item">
+                      <div className="project-details">
+                        <h4>6000 TPD Cement Plant</h4>
+                        <p>Industrial project implementation in Kurdistan region</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="company-culture">
+                  <h3>Entrepreneurial Culture</h3>
+                  <p>
+                    At Deep Engineering, we encourage entrepreneurial mindset and foster an environment 
+                    where our people empower themselves. We provide freedom, encouragement, and confidence 
+                    to take the lead and make positive change through innovation, creativity, and calculated risks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -543,4 +611,4 @@ export default function Summary() {
       `}</style>
     </div>
   );
-} 
+}

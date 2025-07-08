@@ -11,79 +11,74 @@ export default function About() {
 
   const executiveTeam = [
     {
-      name: "Dr. Sarah Johnson",
-      title: "Chief Executive Officer",
-      bio: "20+ years in renewable energy, former VP at General Electric Renewable Energy",
-      image: "/team/ceo.jpg",
+      name: "Leadership Team",
+      title: "Experienced Professionals",
+      bio: "Specialized team in KPP, oil & gas services and consulting backed by international partners expertise",
+      image: "/team/leadership.jpg",
       linkedin: "#"
     },
     {
-      name: "Prof. Michael Chen",
-      title: "Chief Technology Officer",
-      bio: "Lead inventor of KPP technology, 15+ patents in energy systems",
-      image: "/team/cto.jpg",
+      name: "Technical Team",
+      title: "Engineering Excellence",
+      bio: "Technical background with international oil and gas service providers and KPP technology specialists",
+      image: "/team/technical.jpg",
       linkedin: "#"
     },
     {
-      name: "David Rodriguez",
-      title: "Chief Financial Officer",
-      bio: "Former CFO at Tesla Energy, expert in renewable energy financing",
-      image: "/team/cfo.jpg",
+      name: "Operations Team",
+      title: "Global Project Management",
+      bio: "Proven track record in major installations across Kurdistan, Iraq, and international markets",
+      image: "/team/operations.jpg",
       linkedin: "#"
     },
     {
-      name: "Lisa Wang",
-      title: "Chief Operating Officer",
-      bio: "Global operations expert, scaled renewable energy projects across 40+ countries",
-      image: "/team/coo.jpg",
+      name: "Business Development",
+      title: "Strategic Partnerships",
+      bio: "International partnerships and business consultancy expertise for comprehensive solutions",
+      image: "/team/business.jpg",
       linkedin: "#"
     }
   ];
 
   const keyMetrics = [
-    { label: "Founded", value: "2018", icon: "🏢" },
-    { label: "Employees", value: "250+", icon: "👥" },
-    { label: "Countries", value: "25+", icon: "🌍" },
-    { label: "Patents", value: "50+", icon: "💡" },
-    { label: "Installations", value: "150+", icon: "⚡" },
-    { label: "Funding Raised", value: "$500M", icon: "💰" }
+    { label: "Major Projects", value: "390MW+", icon: "⚡" },
+    { label: "Countries", value: "Iraq/UK", icon: "🌍" },
+    { label: "Industries", value: "3+", icon: "�" },
+    { label: "Services", value: "KPP/O&G/Consulting", icon: "�" },
+    { label: "Partnerships", value: "International", icon: "🤝" },
+    { label: "Experience", value: "Proven Track Record", icon: "�" }
   ];
 
   const milestones = [
     {
-      year: "2018",
-      title: "Company Founded",
-      description: "Deep Engineering Co. established with breakthrough KPP technology"
-    },
-    {
-      year: "2019",
-      title: "First Commercial Installation",
-      description: "100KW pilot project successfully deployed and operational"
-    },
-    {
       year: "2020",
-      title: "Series A Funding",
-      description: "$50M Series A led by leading energy investors"
+      title: "Company Established",
+      description: "Deep Engineering Co. established with breakthrough KPP technology and comprehensive engineering services"
     },
     {
       year: "2021",
-      title: "Global Expansion",
-      description: "Operations launched in Europe, Asia, and North America"
+      title: "Kurdistan Partnership",
+      description: "300MW KPP project agreement with Ministry of Electricity - Kurdistan Regional Government"
     },
     {
       year: "2022",
-      title: "1MW Milestone",
-      description: "First 1MW+ installation completed for industrial client"
+      title: "Iraq Expansion",
+      description: "90MW KPP project with Board of Investment, Al-Muthana City, Iraq"
     },
     {
       year: "2023",
-      title: "Series B Funding",
-      description: "$200M Series B to accelerate global deployment"
+      title: "Industrial Projects",
+      description: "6000 TPD Cement plant project implementation in Kurdistan region"
     },
     {
       year: "2024",
-      title: "IPO Preparation",
-      description: "Preparing for public offering with 500MW+ pipeline"
+      title: "Service Diversification",
+      description: "Expanded Oil & Gas services and Business Consultancy offerings"
+    },
+    {
+      year: "2025",
+      title: "International Growth",
+      description: "Continued expansion with international partnerships and technology advancement"
     }
   ];
 
@@ -93,10 +88,11 @@ export default function About() {
       <section className="about-hero">
         <div className="hero-content">
           <div className={`hero-text ${isVisible ? 'animate-in' : ''}`}>
-            <h1 className="hero-title">Leading the Renewable Energy Revolution</h1>
+            <h1 className="hero-title">Deep Engineering Co.</h1>
             <p className="hero-subtitle">
-              Deep Engineering Co. is the global pioneer in buoyancy-driven power generation, 
-              transforming how the world generates and consumes clean energy.
+              Pioneering technology company specializing in revolutionary Kinetic Power Plant (KPP) 
+              technology and comprehensive engineering solutions. We provide integrated services with 
+              high expertise to ensure business growth and increased profitability.
             </p>
           </div>
         </div>
@@ -144,16 +140,23 @@ export default function About() {
                 <div className="overview-text">
                   <h2>Our Mission</h2>
                   <p>
-                    To revolutionize global energy infrastructure through innovative buoyancy-driven 
-                    power generation technology, providing clean, reliable, and cost-effective energy 
-                    solutions for businesses and governments worldwide.
+                    To provide revolutionary KPP technology and integrated engineering solutions that 
+                    deliver clean, continuous renewable electricity while helping businesses grow and 
+                    increase their profitability through comprehensive market insights and expertise.
                   </p>
                   
                   <h2>Our Vision</h2>
                   <p>
-                    A world powered by sustainable energy where every organization has access to 
-                    affordable, reliable, and clean electricity, driving economic growth while 
-                    protecting our planet for future generations.
+                    To be the leading provider of innovative energy solutions, taking a significant 
+                    share of future energy needs in both mature and emerging markets through KPP 
+                    technology and comprehensive engineering services.
+                  </p>
+                  
+                  <h2>Company Culture</h2>
+                  <p>
+                    At Deep Engineering, we encourage entrepreneurial mindset and foster an environment 
+                    where our people empower themselves. We provide freedom, encouragement, and confidence 
+                    to take the lead and make positive change through innovation, creativity, and calculated risks.
                   </p>
                   
                   <h2>Core Values</h2>

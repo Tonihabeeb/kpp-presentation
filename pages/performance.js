@@ -11,20 +11,24 @@ export default function Performance() {
   }, []);
 
   return (
-    <div className="performance-page">
-      <div className="perf-hero">
-        <div className="hero-content">
-          <div className={`hero-text ${isVisible ? 'animate-in' : ''}`}>
-            <h1 className="hero-title">KPP Performance Metrics</h1>
-            <p className="hero-subtitle">
-              Real-world data and performance analysis demonstrating the efficiency, 
+    <>
+      {/* Skip to main content for accessibility */}
+      <a href="#main-performance-content" className="skip-link">Skip to main content</a>
+      
+      <div className="performance-page">
+        <section className="perf-hero" aria-label="Performance metrics hero section">
+          <div className="hero-content">
+            <div className={`hero-text ${isVisible ? 'animate-in' : ''}`}>
+              <h1 className="hero-title">KPP Performance Metrics</h1>
+              <p className="hero-subtitle">
+                Real-world data and performance analysis demonstrating the efficiency, 
               reliability, and economic viability of the KPP system
             </p>
           </div>
         </div>
-      </div>
+        </section>
 
-      <div className="perf-content">
+        <main id="main-performance-content" className="perf-content">
         <div className="content-container">
           <div className={`power-output ${isVisible ? 'animate-in' : ''}`}>
             <h2 className="section-title">Power Generation Performance</h2>
@@ -263,12 +267,13 @@ export default function Performance() {
             </div>
           </div>
         </div>
+        </main>
       </div>
 
       <style jsx>{`
         .performance-page {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          background: linear-gradient(135deg, var(--color-background) 0%, var(--color-secondary-bg) 100%);
           position: relative;
         }
         
@@ -279,12 +284,12 @@ export default function Performance() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,112,243,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(42,87,165,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
           opacity: 0.3;
         }
         
         .perf-hero {
-          background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,255,0.9) 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(241,245,249,0.95) 100%);
           backdrop-filter: blur(10px);
           padding: 6rem 2rem;
           text-align: center;
@@ -806,6 +811,6 @@ export default function Performance() {
           }
         }
       `}</style>
-    </div>
+    </>
   );
-} 
+}

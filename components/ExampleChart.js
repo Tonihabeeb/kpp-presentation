@@ -22,7 +22,11 @@ export default function ExampleChart({ type = 'line', data = performanceData, ti
     switch (type) {
       case 'line':
         return (
-          <LineChart data={data}>
+          <LineChart 
+            data={data}
+            role="img" 
+            aria-label={`Line chart showing ${title}. The chart displays performance data over 6 months.`}
+          >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
@@ -36,7 +40,11 @@ export default function ExampleChart({ type = 'line', data = performanceData, ti
       
       case 'bar':
         return (
-          <BarChart data={data}>
+          <BarChart 
+            data={data}
+            role="img"
+            aria-label={`Bar chart showing ${title}. The chart compares efficiency, output, and cost metrics across months.`}
+          >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
@@ -50,7 +58,7 @@ export default function ExampleChart({ type = 'line', data = performanceData, ti
       
       case 'pie':
         return (
-          <PieChart>
+          <PieChart role="img" aria-label="Pie chart showing energy distribution in the KPP system">
             <Pie
               data={energyDistribution}
               cx="50%"
@@ -85,11 +93,11 @@ export default function ExampleChart({ type = 'line', data = performanceData, ti
   };
 
   return (
-    <div className="chart-container">
-      <h3>{title}</h3>
+    <figure className="chart-container" role="img" aria-labelledby={`chart-title-${type}`}>
+      <h3 id={`chart-title-${type}`}>{title}</h3>
       <ResponsiveContainer width="100%" height={300}>
         {renderChart()}
       </ResponsiveContainer>
-    </div>
+    </figure>
   );
 } 

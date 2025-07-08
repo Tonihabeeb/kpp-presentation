@@ -1,0 +1,6 @@
+# Technology Demo Video Placeholder
+
+This is a placeholder for the technology demonstration video.
+The actual video file will be added later.
+
+File: technology-demo.mp4

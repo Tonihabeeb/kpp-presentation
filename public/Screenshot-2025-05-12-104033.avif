@@ -1,0 +1,33 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f0f2f5"/>
+  <rect x="20" y="20" width="760" height="560" fill="#ffffff" stroke="#e1e5e9" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="40" y="40" width="720" height="60" fill="#1a73e8" rx="8"/>
+  <text x="400" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">KPP Technology Overview</text>
+  
+  <!-- Main content area -->
+  <rect x="60" y="120" width="340" height="200" fill="#f8f9fa" stroke="#e1e5e9" stroke-width="1" rx="4"/>
+  <text x="230" y="145" text-anchor="middle" fill="#5f6368" font-family="Arial, sans-serif" font-size="14">System Diagram</text>
+  
+  <!-- Generator representation -->
+  <circle cx="180" cy="200" r="40" fill="#34a853" stroke="#137333" stroke-width="2"/>
+  <text x="180" y="205" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">GEN</text>
+  
+  <!-- Buoyancy chambers -->
+  <rect x="280" y="180" width="60" height="40" fill="#4285f4" stroke="#1967d2" stroke-width="2" rx="4"/>
+  <text x="310" y="205" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">BUOY</text>
+  
+  <!-- Right panel -->
+  <rect x="420" y="120" width="340" height="420" fill="#f8f9fa" stroke="#e1e5e9" stroke-width="1" rx="4"/>
+  <text x="590" y="145" text-anchor="middle" fill="#5f6368" font-family="Arial, sans-serif" font-size="14">Technical Specifications</text>
+  
+  <!-- Specs list -->
+  <text x="440" y="180" fill="#202124" font-family="Arial, sans-serif" font-size="12">• Power Output: Variable</text>
+  <text x="440" y="200" fill="#202124" font-family="Arial, sans-serif" font-size="12">• Efficiency: High</text>
+  <text x="440" y="220" fill="#202124" font-family="Arial, sans-serif" font-size="12">• Renewable: 100%</text>
+  <text x="440" y="240" fill="#202124" font-family="Arial, sans-serif" font-size="12">• Maintenance: Low</text>
+  
+  <!-- Bottom info -->
+  <text x="400" y="570" text-anchor="middle" fill="#9aa0a6" font-family="Arial, sans-serif" font-size="12">Screenshot placeholder - Technology overview</text>
+</svg>

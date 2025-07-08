@@ -256,15 +256,15 @@ export default function EnterpriseNavBar() {
           left: 0;
           right: 0;
           z-index: 1000;
-          background: rgba(255, 255, 255, 0.95);
+          background: rgba(10, 10, 10, 0.95);
           backdrop-filter: blur(20px);
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid #D1D5DB;
           transition: all 0.3s ease;
         }
         
         .enterprise-navbar.scrolled {
-          background: rgba(255, 255, 255, 0.98);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          background: rgba(10, 10, 10, 0.98);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         
         .nav-container {
@@ -309,13 +309,13 @@ export default function EnterpriseNavBar() {
         .company-name {
           font-size: 1.2rem;
           font-weight: 700;
-          color: #1a1a1a;
+          color: #F3F4F6;
           line-height: 1.2;
         }
         
         .tagline {
           font-size: 0.8rem;
-          color: #0070f3;
+          color: #2A57A5;
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -336,7 +336,7 @@ export default function EnterpriseNavBar() {
           align-items: center;
           gap: 0.5rem;
           padding: 0.5rem 1rem;
-          color: #1a1a1a;
+          color: #D1D5DB;
           text-decoration: none;
           font-weight: 500;
           font-size: 0.95rem;
@@ -346,8 +346,8 @@ export default function EnterpriseNavBar() {
         
         .nav-link:hover,
         .nav-link.active {
-          color: #0070f3;
-          background: rgba(0, 112, 243, 0.1);
+          color: #3B82F6;
+          background: rgba(59, 130, 246, 0.1);
         }
         
         .dropdown-icon {
@@ -365,10 +365,10 @@ export default function EnterpriseNavBar() {
           top: 100%;
           left: 0;
           min-width: 320px;
-          background: white;
+          background: #0A0A0A;
           border-radius: 12px;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-          border: 1px solid rgba(0, 0, 0, 0.1);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+          border: 1px solid #D1D5DB;
           padding: 1rem;
           margin-top: 0.5rem;
           opacity: 0;
@@ -398,19 +398,19 @@ export default function EnterpriseNavBar() {
         }
         
         .dropdown-item:hover {
-          background: rgba(0, 112, 243, 0.05);
+          background: rgba(59, 130, 246, 0.1);
         }
         
         .dropdown-item-title {
           font-size: 0.95rem;
           font-weight: 600;
-          color: #1a1a1a;
+          color: #F3F4F6;
           margin: 0 0 0.3rem 0;
         }
         
         .dropdown-item-description {
           font-size: 0.8rem;
-          color: #666;
+          color: #D1D5DB;
           margin: 0;
           line-height: 1.4;
         }
@@ -433,15 +433,15 @@ export default function EnterpriseNavBar() {
           height: 40px;
           border: none;
           background: transparent;
-          color: #666;
+          color: #D1D5DB;
           cursor: pointer;
           border-radius: 8px;
           transition: all 0.3s ease;
         }
         
         .search-toggle:hover {
-          background: rgba(0, 112, 243, 0.1);
-          color: #0070f3;
+          background: rgba(59, 130, 246, 0.1);
+          color: #3B82F6;
         }
         
         .search-toggle svg {
@@ -454,10 +454,10 @@ export default function EnterpriseNavBar() {
           top: 100%;
           right: 0;
           width: 300px;
-          background: white;
+          background: #0A0A0A;
           border-radius: 12px;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-          border: 1px solid rgba(0, 0, 0, 0.1);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+          border: 1px solid #D1D5DB;
           padding: 1rem;
           margin-top: 0.5rem;
           display: flex;
@@ -477,15 +477,17 @@ export default function EnterpriseNavBar() {
         .search-input {
           flex: 1;
           padding: 0.75rem 1rem;
-          border: 1px solid rgba(0, 0, 0, 0.2);
+          border: 1px solid #D1D5DB;
           border-radius: 8px;
           font-size: 0.9rem;
           outline: none;
           transition: border-color 0.3s ease;
+          background: #0A0A0A;
+          color: #F3F4F6;
         }
         
         .search-input:focus {
-          border-color: #0070f3;
+          border-color: #3B82F6;
         }
         
         .search-submit {
@@ -494,7 +496,7 @@ export default function EnterpriseNavBar() {
           justify-content: center;
           width: 40px;
           height: 40px;
-          background: #0070f3;
+          background: #3B82F6;
           color: white;
           border: none;
           border-radius: 8px;
@@ -503,7 +505,7 @@ export default function EnterpriseNavBar() {
         }
         
         .search-submit:hover {
-          background: #0051cc;
+          background: #2A57A5;
         }
         
         .search-submit svg {
@@ -520,9 +522,9 @@ export default function EnterpriseNavBar() {
           align-items: center;
           gap: 0.5rem;
           padding: 0.5rem 1rem;
-          border: 1px solid rgba(0, 0, 0, 0.2);
+          border: 1px solid #D1D5DB;
           background: transparent;
-          color: #666;
+          color: #D1D5DB;
           border-radius: 8px;
           cursor: pointer;
           font-size: 0.9rem;
@@ -531,8 +533,8 @@ export default function EnterpriseNavBar() {
         }
         
         .language-toggle:hover {
-          border-color: #0070f3;
-          color: #0070f3;
+          border-color: #3B82F6;
+          color: #3B82F6;
         }
         
         .language-toggle svg {
@@ -544,10 +546,10 @@ export default function EnterpriseNavBar() {
           position: absolute;
           top: 100%;
           right: 0;
-          background: white;
+          background: #0A0A0A;
           border-radius: 12px;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-          border: 1px solid rgba(0, 0, 0, 0.1);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+          border: 1px solid #D1D5DB;
           padding: 0.5rem;
           margin-top: 0.5rem;
           min-width: 120px;
@@ -566,15 +568,15 @@ export default function EnterpriseNavBar() {
         .language-option {
           display: block;
           padding: 0.5rem 1rem;
-          color: #666;
+          color: #D1D5DB;
           text-decoration: none;
           border-radius: 6px;
           transition: all 0.3s ease;
         }
         
         .language-option:hover {
-          background: rgba(0, 112, 243, 0.1);
-          color: #0070f3;
+          background: rgba(59, 130, 246, 0.1);
+          color: #3B82F6;
         }
         
         .cta-buttons {
@@ -597,25 +599,25 @@ export default function EnterpriseNavBar() {
         }
         
         .btn-primary {
-          background: linear-gradient(135deg, #0070f3 0%, #0051cc 100%);
-          color: white;
-          box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3);
+          background: linear-gradient(135deg, #3B82F6 0%, #2A57A5 100%);
+          color: #F3F4F6;
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
         
         .btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 112, 243, 0.4);
+          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
         
         .btn-secondary {
           background: transparent;
-          color: #0070f3;
-          border: 2px solid #0070f3;
+          color: #3B82F6;
+          border: 2px solid #3B82F6;
         }
         
         .btn-secondary:hover {
-          background: #0070f3;
-          color: white;
+          background: #3B82F6;
+          color: #F3F4F6;
           transform: translateY(-2px);
         }
         
@@ -632,7 +634,7 @@ export default function EnterpriseNavBar() {
         .hamburger-line {
           width: 24px;
           height: 2px;
-          background: #1a1a1a;
+          background: #F3F4F6;
           transition: all 0.3s ease;
         }
         
@@ -641,8 +643,8 @@ export default function EnterpriseNavBar() {
           top: 80px;
           left: 0;
           right: 0;
-          background: white;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          background: #0A0A0A;
+          border-bottom: 1px solid #D1D5DB;
           transform: translateY(-100%);
           transition: transform 0.3s ease;
           max-height: calc(100vh - 80px);
@@ -664,11 +666,11 @@ export default function EnterpriseNavBar() {
         .mobile-nav-link {
           display: block;
           padding: 1rem 0;
-          color: #1a1a1a;
+          color: #F3F4F6;
           text-decoration: none;
           font-weight: 600;
           font-size: 1.1rem;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid #D1D5DB;
         }
         
         .mobile-dropdown {
@@ -679,7 +681,7 @@ export default function EnterpriseNavBar() {
         .mobile-dropdown-item {
           display: block;
           padding: 0.75rem 0;
-          color: #666;
+          color: #D1D5DB;
           text-decoration: none;
           font-size: 0.9rem;
         }

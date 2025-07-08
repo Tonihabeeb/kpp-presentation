@@ -194,6 +194,81 @@ export default function Timeline() {
             </div>
           </div>
         </div>
+
+        <div className="real-projects-section">
+          <h2>🏗️ Major Project Deployments</h2>
+          <div className="projects-timeline">
+            <div className="project-item major-project">
+              <div className="project-header">
+                <div className="project-scale">300 MW</div>
+                <h3>Kurdistan Regional Government</h3>
+                <p className="project-partner">Ministry of Electricity Partnership</p>
+              </div>
+              <div className="project-details">
+                <p>Major deployment of Kinetic Power Plant technology in partnership with the Ministry of Electricity, Kurdistan Regional Government. This large-scale implementation demonstrates the viability and effectiveness of KPP technology for government-level energy infrastructure.</p>
+                <div className="project-tags">
+                  <span className="tag">Government Partnership</span>
+                  <span className="tag">Large Scale</span>
+                  <span className="tag">Iraq</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="project-item major-project">
+              <div className="project-header">
+                <div className="project-scale">90 MW</div>
+                <h3>Al-Muthana City Project</h3>
+                <p className="project-partner">Board of Investment Collaboration</p>
+              </div>
+              <div className="project-details">
+                <p>Strategic implementation with the Board of Investment in Al-Muthana City, Iraq. This project showcases the economic benefits and investment potential of KPP technology in emerging markets.</p>
+                <div className="project-tags">
+                  <span className="tag">Investment Board</span>
+                  <span className="tag">Economic Development</span>
+                  <span className="tag">Iraq</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="project-item industrial-project">
+              <div className="project-header">
+                <div className="project-scale">6000 TPD</div>
+                <h3>Cement Plant Project</h3>
+                <p className="project-partner">Industrial Implementation</p>
+              </div>
+              <div className="project-details">
+                <p>Industrial-scale cement plant implementation in Kurdistan, demonstrating the versatility of Deep Engineering's capabilities beyond KPP technology, including major industrial projects and EPC services.</p>
+                <div className="project-tags">
+                  <span className="tag">Industrial</span>
+                  <span className="tag">EPC</span>
+                  <span className="tag">Kurdistan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="project-summary">
+            <h3>Project Portfolio Summary</h3>
+            <div className="summary-stats">
+              <div className="stat-item">
+                <div className="stat-number">390+ MW</div>
+                <div className="stat-label">Total KPP Capacity</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">3</div>
+                <div className="stat-label">Major Projects</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">2</div>
+                <div className="stat-label">Countries</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">100%</div>
+                <div className="stat-label">Government Approved</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
@@ -496,6 +571,100 @@ export default function Timeline() {
           margin: 0;
         }
         
+        .real-projects-section {
+          margin-top: 4rem;
+        }
+        
+        .real-projects-section h2 {
+          font-size: 2.5rem;
+          margin: 0 0 2rem 0;
+          color: #1a1a1a;
+          text-align: center;
+        }
+        
+        .projects-timeline {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+        
+        .project-item {
+          background: white;
+          padding: 2rem;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .project-header {
+          margin-bottom: 1.5rem;
+        }
+        
+        .project-scale {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #0070f3;
+          margin-bottom: 0.5rem;
+        }
+        
+        .project-partner {
+          font-size: 0.9rem;
+          color: #666;
+          margin: 0;
+        }
+        
+        .project-details p {
+          color: #666;
+          line-height: 1.7;
+          margin: 0 0 1rem 0;
+        }
+        
+        .project-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+        
+        .tag {
+          background: #0070f3;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 16px;
+          font-size: 0.9rem;
+        }
+        
+        .project-summary {
+          margin-top: 3rem;
+          padding: 2rem;
+          background: #f8f9fa;
+          border-radius: 12px;
+          text-align: center;
+        }
+        
+        .summary-stats {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1.5rem;
+        }
+        
+        .stat-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .stat-number {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #0070f3;
+          margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+          font-size: 0.9rem;
+          color: #666;
+          margin: 0;
+        }
+        
         @media (max-width: 768px) {
           .timeline {
             padding-left: 2rem;
@@ -519,8 +688,12 @@ export default function Timeline() {
           .page-hero h1 {
             font-size: 2rem;
           }
+          
+          .projects-timeline {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </div>
   );
-} 
+}

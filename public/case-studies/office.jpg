@@ -1,0 +1,76 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  
+  <!-- Office building -->
+  <rect x="80" y="60" width="240" height="180" fill="#e8f0fe" stroke="#1967d2" stroke-width="2" rx="8"/>
+  
+  <!-- Building floors -->
+  <line x1="80" y1="100" x2="320" y2="100" stroke="#dadce0" stroke-width="1"/>
+  <line x1="80" y1="140" x2="320" y2="140" stroke="#dadce0" stroke-width="1"/>
+  <line x1="80" y1="180" x2="320" y2="180" stroke="#dadce0" stroke-width="1"/>
+  <line x1="80" y1="220" x2="320" y2="220" stroke="#dadce0" stroke-width="1"/>
+  
+  <!-- Windows grid -->
+  <rect x="90" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="110" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="130" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="210" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="230" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="250" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="270" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="290" y="70" width="12" height="15" fill="#4285f4" rx="1"/>
+  
+  <rect x="90" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="110" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="130" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="210" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="230" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="250" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="270" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="290" y="110" width="12" height="15" fill="#4285f4" rx="1"/>
+  
+  <rect x="90" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="110" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="130" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="210" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="230" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="250" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="270" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="290" y="150" width="12" height="15" fill="#4285f4" rx="1"/>
+  
+  <rect x="90" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="110" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="130" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="210" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="230" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="250" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="270" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  <rect x="290" y="190" width="12" height="15" fill="#4285f4" rx="1"/>
+  
+  <!-- KPP system -->
+  <rect x="40" y="200" width="25" height="35" fill="#34a853" rx="4"/>
+  <circle cx="52.5" cy="217.5" r="8" fill="#fbbc04"/>
+  <text x="52.5" y="222" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">KPP</text>
+  
+  <!-- Entry -->
+  <rect x="170" y="220" width="60" height="20" fill="#9aa0a6" rx="2"/>
+  <text x="200" y="233" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">LOBBY</text>
+  
+  <!-- Parking -->
+  <rect x="340" y="200" width="40" height="30" fill="#f1f3f4" stroke="#9aa0a6" stroke-width="1" rx="2"/>
+  <rect x="345" y="210" width="8" height="12" fill="#4285f4" rx="1"/>
+  <rect x="355" y="210" width="8" height="12" fill="#34a853" rx="1"/>
+  <rect x="365" y="210" width="8" height="12" fill="#ea4335" rx="1"/>
+  
+  <!-- Title overlay -->
+  <rect x="20" y="20" width="360" height="40" fill="rgba(26, 115, 232, 0.9)" rx="8"/>
+  <text x="200" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Corporate Office</text>
+  <text x="200" y="55" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">Sustainable Operations</text>
+  
+  <!-- Stats -->
+  <rect x="20" y="250" width="120" height="30" fill="rgba(52, 168, 83, 0.9)" rx="4"/>
+  <text x="80" y="268" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">50% Cost Savings</text>
+  
+  <rect x="260" y="250" width="120" height="30" fill="rgba(251, 188, 4, 0.9)" rx="4"/>
+  <text x="320" y="268" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">LEED Certified</text>
+</svg>

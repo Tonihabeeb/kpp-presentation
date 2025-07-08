@@ -2,15 +2,19 @@ import Image from 'next/image';
 
 export default function Contact() {
   return (
-    <div className="contact-page">
-      <div className="page-hero">
-        <div className="hero-content">
-          <h1>Contact & Next Steps</h1>
-          <p>The Future of Sustainable Energy Generation</p>
-        </div>
-      </div>
+    <>
+      {/* Skip to main content for accessibility */}
+      <a href="#main-contact-content" className="skip-link">Skip to main content</a>
+      
+      <div className="contact-page">
+        <section className="page-hero" aria-label="Contact page hero section">
+          <div className="hero-content">
+            <h1>Contact & Next Steps</h1>
+            <p>The Future of Sustainable Energy Generation</p>
+          </div>
+        </section>
 
-      <div className="page-content">
+        <main id="main-contact-content" className="page-content">
         <div className="summary-section">
           <h2>🎯 Key Takeaways</h2>
           <div className="takeaways-grid">
@@ -149,23 +153,39 @@ export default function Contact() {
                   <div className="contact-icon">📧</div>
                   <div className="contact-text">
                     <strong>Email:</strong>
-                    <span>info@deepengineering.com</span>
+                    <span>info@deepengineering.co</span>
                   </div>
                 </div>
                 
                 <div className="contact-item">
                   <div className="contact-icon">📱</div>
                   <div className="contact-text">
-                    <strong>Phone:</strong>
-                    <span>+1 (555) 123-4567</span>
+                    <strong>Iraq Office:</strong>
+                    <span>+964 751 235 3179<br />+964 750 466 3879</span>
+                  </div>
+                </div>
+                
+                <div className="contact-item">
+                  <div className="contact-icon">📞</div>
+                  <div className="contact-text">
+                    <strong>UK Office:</strong>
+                    <span>+44 2891 6370 23</span>
                   </div>
                 </div>
                 
                 <div className="contact-item">
                   <div className="contact-icon">📍</div>
                   <div className="contact-text">
-                    <strong>Address:</strong>
-                    <span>123 Innovation Drive<br />Tech City, TC 12345</span>
+                    <strong>Iraq Address:</strong>
+                    <span>Iraq, Erbil, Justice Tower F-14 #20</span>
+                  </div>
+                </div>
+                
+                <div className="contact-item">
+                  <div className="contact-icon">🏢</div>
+                  <div className="contact-text">
+                    <strong>UK Address:</strong>
+                    <span>129 Station Road, London, NW4 4NJ</span>
                   </div>
                 </div>
               </div>
@@ -212,16 +232,17 @@ export default function Contact() {
             </div>
           </div>
         </div>
+        </main>
       </div>
 
       <style jsx>{`
         .contact-page {
-          background: #f8f9fa;
+          background: var(--color-background);
           min-height: 100vh;
         }
         
         .page-hero {
-          background: linear-gradient(135deg, #0070f3 0%, #0051cc 100%);
+          background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
           color: white;
           padding: 4rem 2rem;
           text-align: center;
@@ -591,6 +612,6 @@ export default function Contact() {
           }
         }
       `}</style>
-    </div>
+    </>
   );
-} 
+}

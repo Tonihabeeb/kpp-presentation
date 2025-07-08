@@ -1,0 +1,98 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 450
+>>
+stream
+BT
+/F1 18 Tf
+50 750 Td
+(Manufacturing Case Study) Tj
+0 -40 Td
+/F1 12 Tf
+(KPP Implementation at Global Manufacturing Corp) Tj
+0 -30 Td
+(Project Overview:) Tj
+0 -20 Td
+(• Client: Global Manufacturing Corporation) Tj
+0 -20 Td
+(• Installation: 3x 1MW KPP units) Tj
+0 -20 Td
+(• Timeline: 6 weeks installation) Tj
+0 -20 Td
+(• Investment: $8.5M total project cost) Tj
+0 -30 Td
+(Results Achieved:) Tj
+0 -20 Td
+(• 95% reduction in grid dependency) Tj
+0 -20 Td
+(• $1.2M annual energy cost savings) Tj
+0 -20 Td
+(• Zero production downtime due to power issues) Tj
+0 -20 Td
+(• 99.8% system uptime achieved) Tj
+0 -30 Td
+(Environmental Impact:) Tj
+0 -20 Td
+(• 2,400 tons CO2 reduction annually) Tj
+0 -20 Td
+(• 100% renewable energy certification) Tj
+0 -30 Td
+(ROI: 7.1 years payback period) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000274 00000 n 
+0000000776 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+854
+%%EOF

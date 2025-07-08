@@ -10,21 +10,25 @@ export default function Applications() {
   }, []);
 
   return (
-    <div className="applications-page">
-      <div className="app-hero">
-        <div className="hero-content">
-          <div className={`hero-text ${isVisible ? 'animate-in' : ''}`}>
-            <h1 className="hero-title">KPP Applications & Use Cases</h1>
-            <p className="hero-subtitle">
-              Discover the diverse range of applications where KPP technology can revolutionize 
-              energy generation across industries and communities worldwide
-            </p>
+    <>
+      {/* Skip to main content for accessibility */}
+      <a href="#main-applications-content" className="skip-link">Skip to main content</a>
+      
+      <div className="applications-page">
+        <section className="app-hero" aria-label="Applications overview hero section">
+          <div className="hero-content">
+            <div className={`hero-text ${isVisible ? 'animate-in' : ''}`}>
+              <h1 className="hero-title">KPP Applications & Use Cases</h1>
+              <p className="hero-subtitle">
+                Discover the diverse range of applications where KPP technology can revolutionize 
+                energy generation across industries and communities worldwide
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div className="app-content">
-        <div className="content-container">
+        <main id="main-applications-content" className="app-content">
+          <div className="content-container">
           <div className={`market-overview ${isVisible ? 'animate-in' : ''}`}>
             <h2 className="section-title">Market Overview & Opportunities</h2>
             <div className="market-grid">
@@ -345,13 +349,14 @@ export default function Applications() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </main>
       </div>
 
       <style jsx>{`
         .applications-page {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          background: linear-gradient(135deg, var(--color-background) 0%, var(--color-secondary-bg) 100%);
           position: relative;
         }
         
@@ -362,12 +367,12 @@ export default function Applications() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,112,243,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(42,87,165,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
           opacity: 0.3;
         }
         
         .app-hero {
-          background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,255,0.9) 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(241,245,249,0.95) 100%);
           backdrop-filter: blur(10px);
           padding: 6rem 2rem;
           text-align: center;
@@ -395,7 +400,7 @@ export default function Applications() {
           font-size: 3.5rem;
           font-weight: 800;
           margin: 0 0 1.5rem 0;
-          background: linear-gradient(135deg, #1a1a1a 0%, #0070f3 100%);
+          background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -403,7 +408,7 @@ export default function Applications() {
         
         .hero-subtitle {
           font-size: 1.3rem;
-          color: #666;
+          color: var(--color-text-secondary);
           line-height: 1.7;
           margin: 0;
         }
@@ -436,7 +441,7 @@ export default function Applications() {
           font-weight: 700;
           text-align: center;
           margin: 0 0 3rem 0;
-          color: #1a1a1a;
+          color: var(--color-text);
         }
         
         .market-grid {
@@ -446,7 +451,7 @@ export default function Applications() {
         }
         
         .market-card {
-          background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,255,0.9) 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(241,245,249,0.95) 100%);
           padding: 2.5rem;
           border-radius: 20px;
           text-align: center;
@@ -511,12 +516,12 @@ export default function Applications() {
         }
         
         .application-category {
-          background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,255,0.9) 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(241,245,249,0.95) 100%);
           padding: 2rem;
           border-radius: 20px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          box-shadow: 0 10px 30px rgba(42, 87, 165, 0.1);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.3);
+          border: 1px solid var(--color-border);
         }
         
         .application-category h3 {
@@ -770,28 +775,28 @@ export default function Applications() {
         }
         
         .btn-primary {
-          background: linear-gradient(135deg, #0070f3 0%, #0051cc 100%);
+          background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
           color: white;
-          box-shadow: 0 8px 25px rgba(0, 112, 243, 0.3);
+          box-shadow: 0 8px 25px rgba(42, 87, 165, 0.3);
         }
         
         .btn-primary:hover {
           transform: translateY(-3px);
-          box-shadow: 0 12px 35px rgba(0, 112, 243, 0.4);
+          box-shadow: 0 12px 35px rgba(42, 87, 165, 0.4);
         }
         
         .btn-secondary {
           background: rgba(255, 255, 255, 0.9);
-          color: #0070f3;
-          border: 2px solid #0070f3;
+          color: var(--color-primary);
+          border: 2px solid var(--color-primary);
           backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover {
-          background: #0070f3;
+          background: var(--color-primary);
           color: white;
           transform: translateY(-3px);
-          box-shadow: 0 8px 25px rgba(0, 112, 243, 0.3);
+          box-shadow: 0 8px 25px rgba(42, 87, 165, 0.3);
         }
         
         .btn-icon {
@@ -830,6 +835,6 @@ export default function Applications() {
           }
         }
       `}</style>
-    </div>
+    </>
   );
-} 
+}

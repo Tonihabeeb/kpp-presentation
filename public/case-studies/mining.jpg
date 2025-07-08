@@ -1,0 +1,58 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#8b4513"/>
+  
+  <!-- Mining pit background -->
+  <ellipse cx="200" cy="200" rx="180" ry="80" fill="#654321"/>
+  <ellipse cx="200" cy="190" rx="160" ry="70" fill="#8b7355"/>
+  <ellipse cx="200" cy="180" rx="140" ry="60" fill="#a0522d"/>
+  
+  <!-- Mining equipment -->
+  <rect x="100" y="150" width="40" height="30" fill="#ffff00" rx="4"/>
+  <rect x="120" y="140" width="15" height="10" fill="#ffff00"/>
+  <circle cx="110" cy="185" r="8" fill="#202124"/>
+  <circle cx="130" cy="185" r="8" fill="#202124"/>
+  
+  <rect x="250" y="160" width="50" height="25" fill="#ff6b35" rx="4"/>
+  <rect x="270" y="150" width="20" height="10" fill="#ff6b35"/>
+  <circle cx="260" cy="190" r="10" fill="#202124"/>
+  <circle cx="290" cy="190" r="10" fill="#202124"/>
+  
+  <!-- KPP power stations -->
+  <rect x="50" y="120" width="25" height="40" fill="#34a853" rx="4"/>
+  <rect x="325" y="130" width="25" height="35" fill="#34a853" rx="4"/>
+  <circle cx="62.5" cy="140" r="8" fill="#fbbc04"/>
+  <circle cx="337.5" cy="147.5" r="8" fill="#fbbc04"/>
+  
+  <!-- Power cables -->
+  <line x1="75" y1="140" x2="100" y2="165" stroke="#4285f4" stroke-width="3"/>
+  <line x1="325" y1="147.5" x2="300" y2="172.5" stroke="#4285f4" stroke-width="3"/>
+  
+  <!-- Mining structures -->
+  <polygon points="180,100 200,80 220,100" fill="#9aa0a6"/>
+  <rect x="190" y="100" width="20" height="40" fill="#9aa0a6"/>
+  
+  <!-- Conveyor belt -->
+  <rect x="20" y="180" width="360" height="8" fill="#5f6368" rx="4"/>
+  <rect x="30" y="178" width="10" height="12" fill="#202124" rx="1"/>
+  <rect x="60" y="178" width="10" height="12" fill="#202124" rx="1"/>
+  <rect x="90" y="178" width="10" height="12" fill="#202124" rx="1"/>
+  <rect x="300" y="178" width="10" height="12" fill="#202124" rx="1"/>
+  <rect x="330" y="178" width="10" height="12" fill="#202124" rx="1"/>
+  <rect x="360" y="178" width="10" height="12" fill="#202124" rx="1"/>
+  
+  <!-- Mountains background -->
+  <polygon points="0,120 40,60 80,120" fill="#5f6368"/>
+  <polygon points="320,120 360,70 400,120" fill="#5f6368"/>
+  
+  <!-- Title overlay -->
+  <rect x="20" y="20" width="360" height="40" fill="rgba(255, 107, 53, 0.9)" rx="8"/>
+  <text x="200" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Mining Operation</text>
+  <text x="200" y="55" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">Remote Power Solutions</text>
+  
+  <!-- Stats -->
+  <rect x="20" y="250" width="120" height="30" fill="rgba(52, 168, 83, 0.9)" rx="4"/>
+  <text x="80" y="268" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Remote Ready</text>
+  
+  <rect x="260" y="250" width="120" height="30" fill="rgba(251, 188, 4, 0.9)" rx="4"/>
+  <text x="320" y="268" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">24/7 Operation</text>
+</svg>

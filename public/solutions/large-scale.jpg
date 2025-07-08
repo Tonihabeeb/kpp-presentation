@@ -1,0 +1,67 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f0f2f5"/>
+  
+  <!-- Large scale KPP system -->
+  <rect x="80" y="60" width="240" height="160" fill="#ea4335" stroke="#d33b2c" stroke-width="3" rx="8"/>
+  
+  <!-- Multiple generator units -->
+  <rect x="100" y="80" width="40" height="120" fill="white" stroke="#e1e5e9" stroke-width="1" rx="4"/>
+  <rect x="150" y="80" width="40" height="120" fill="white" stroke="#e1e5e9" stroke-width="1" rx="4"/>
+  <rect x="200" y="80" width="40" height="120" fill="white" stroke="#e1e5e9" stroke-width="1" rx="4"/>
+  <rect x="250" y="80" width="40" height="120" fill="white" stroke="#e1e5e9" stroke-width="1" rx="4"/>
+  
+  <!-- Generators -->
+  <circle cx="120" cy="140" r="15" fill="#4285f4"/>
+  <text x="120" y="144" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">G1</text>
+  <circle cx="170" cy="140" r="15" fill="#4285f4"/>
+  <text x="170" y="144" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">G2</text>
+  <circle cx="220" cy="140" r="15" fill="#4285f4"/>
+  <text x="220" y="144" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">G3</text>
+  <circle cx="270" cy="140" r="15" fill="#4285f4"/>
+  <text x="270" y="144" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">G4</text>
+  
+  <!-- Control room -->
+  <rect x="160" y="100" width="80" height="25" fill="#fbbc04" rx="4"/>
+  <text x="200" y="115" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">CONTROL CENTER</text>
+  
+  <!-- Power output indicator -->
+  <rect x="90" y="50" width="220" height="8" fill="#fbbc04" rx="4"/>
+  <text x="200" y="47" text-anchor="middle" fill="#202124" font-family="Arial, sans-serif" font-size="12" font-weight="bold">5MW Power Plant</text>
+  
+  <!-- Base platform -->
+  <rect x="70" y="220" width="260" height="30" fill="#9aa0a6" rx="4"/>
+  
+  <!-- Multiple connection points -->
+  <circle cx="100" cy="235" r="5" fill="#ea4335"/>
+  <circle cx="120" cy="235" r="5" fill="#34a853"/>
+  <circle cx="140" cy="235" r="5" fill="#4285f4"/>
+  <circle cx="160" cy="235" r="5" fill="#fbbc04"/>
+  <circle cx="180" cy="235" r="5" fill="#9c27b0"/>
+  <circle cx="200" cy="235" r="5" fill="#ff5722"/>
+  <circle cx="220" cy="235" r="5" fill="#00bcd4"/>
+  <circle cx="240" cy="235" r="5" fill="#8bc34a"/>
+  <circle cx="260" cy="235" r="5" fill="#ff9800"/>
+  <circle cx="280" cy="235" r="5" fill="#795548"/>
+  <circle cx="300" cy="235" r="5" fill="#607d8b"/>
+  
+  <!-- City skyline -->
+  <rect x="10" y="180" width="15" height="50" fill="#5f6368" rx="2"/>
+  <rect x="30" y="170" width="20" height="60" fill="#5f6368" rx="2"/>
+  <rect x="55" y="185" width="12" height="45" fill="#5f6368" rx="2"/>
+  
+  <rect x="340" y="175" width="18" height="55" fill="#5f6368" rx="2"/>
+  <rect x="365" y="165" width="15" height="65" fill="#5f6368" rx="2"/>
+  <rect x="385" y="180" width="12" height="50" fill="#5f6368" rx="2"/>
+  
+  <!-- Connection lines to city -->
+  <line x1="70" y1="190" x2="25" y2="205" stroke="#34a853" stroke-width="4"/>
+  <line x1="330" y1="190" x2="365" y2="205" stroke="#34a853" stroke-width="4"/>
+  
+  <!-- Power transmission towers -->
+  <polygon points="15,160 20,140 25,160" fill="#202124"/>
+  <polygon points="365,155 370,135 375,155" fill="#202124"/>
+  
+  <!-- Title overlay -->
+  <rect x="20" y="10" width="360" height="30" fill="rgba(234, 67, 53, 0.9)" rx="8"/>
+  <text x="200" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Large Scale KPP - Utility Grade Power Plant</text>
+</svg>

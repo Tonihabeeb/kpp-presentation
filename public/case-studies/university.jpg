@@ -1,0 +1,80 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#e8f5e8"/>
+  
+  <!-- University campus buildings -->
+  <rect x="60" y="100" width="80" height="120" fill="#4285f4" stroke="#1967d2" stroke-width="2" rx="8"/>
+  <rect x="160" y="80" width="100" height="140" fill="#ea4335" stroke="#d33b2c" stroke-width="2" rx="8"/>
+  <rect x="280" y="110" width="80" height="110" fill="#34a853" stroke="#137333" stroke-width="2" rx="8"/>
+  
+  <!-- Building details -->
+  <!-- Building 1 windows -->
+  <rect x="70" y="120" width="12" height="15" fill="white" rx="2"/>
+  <rect x="88" y="120" width="12" height="15" fill="white" rx="2"/>
+  <rect x="106" y="120" width="12" height="15" fill="white" rx="2"/>
+  <rect x="124" y="120" width="12" height="15" fill="white" rx="2"/>
+  <rect x="70" y="145" width="12" height="15" fill="white" rx="2"/>
+  <rect x="88" y="145" width="12" height="15" fill="white" rx="2"/>
+  <rect x="106" y="145" width="12" height="15" fill="white" rx="2"/>
+  <rect x="124" y="145" width="12" height="15" fill="white" rx="2"/>
+  
+  <!-- Building 2 windows -->
+  <rect x="170" y="100" width="15" height="18" fill="white" rx="2"/>
+  <rect x="190" y="100" width="15" height="18" fill="white" rx="2"/>
+  <rect x="210" y="100" width="15" height="18" fill="white" rx="2"/>
+  <rect x="230" y="100" width="15" height="18" fill="white" rx="2"/>
+  <rect x="170" y="130" width="15" height="18" fill="white" rx="2"/>
+  <rect x="190" y="130" width="15" height="18" fill="white" rx="2"/>
+  <rect x="210" y="130" width="15" height="18" fill="white" rx="2"/>
+  <rect x="230" y="130" width="15" height="18" fill="white" rx="2"/>
+  <rect x="170" y="160" width="15" height="18" fill="white" rx="2"/>
+  <rect x="190" y="160" width="15" height="18" fill="white" rx="2"/>
+  <rect x="210" y="160" width="15" height="18" fill="white" rx="2"/>
+  <rect x="230" y="160" width="15" height="18" fill="white" rx="2"/>
+  
+  <!-- Building 3 windows -->
+  <rect x="290" y="130" width="12" height="15" fill="white" rx="2"/>
+  <rect x="308" y="130" width="12" height="15" fill="white" rx="2"/>
+  <rect x="326" y="130" width="12" height="15" fill="white" rx="2"/>
+  <rect x="344" y="130" width="12" height="15" fill="white" rx="2"/>
+  <rect x="290" y="155" width="12" height="15" fill="white" rx="2"/>
+  <rect x="308" y="155" width="12" height="15" fill="white" rx="2"/>
+  <rect x="326" y="155" width="12" height="15" fill="white" rx="2"/>
+  <rect x="344" y="155" width="12" height="15" fill="white" rx="2"/>
+  
+  <!-- KPP systems -->
+  <rect x="20" y="190" width="25" height="40" fill="#fbbc04" rx="4"/>
+  <rect x="375" y="200" width="20" height="30" fill="#fbbc04" rx="4"/>
+  <circle cx="32.5" cy="210" r="8" fill="#34a853"/>
+  <circle cx="385" cy="215" r="6" fill="#34a853"/>
+  
+  <!-- Campus pathways -->
+  <path d="M 0 240 Q 200 230 400 240" stroke="#9aa0a6" stroke-width="4" fill="none"/>
+  <circle cx="150" cy="235" r="3" fill="#fbbc04"/>
+  <circle cx="250" cy="233" r="3" fill="#fbbc04"/>
+  
+  <!-- Trees -->
+  <circle cx="40" cy="250" r="15" fill="#34a853"/>
+  <rect x="37" y="250" width="6" height="15" fill="#8b4513"/>
+  <circle cx="120" cy="245" r="12" fill="#34a853"/>
+  <rect x="118" y="245" width="4" height="12" fill="#8b4513"/>
+  <circle cx="300" cy="250" r="18" fill="#34a853"/>
+  <rect x="297" y="250" width="6" height="18" fill="#8b4513"/>
+  
+  <!-- Students (represented as small figures) -->
+  <circle cx="180" cy="235" r="3" fill="#ff9800"/>
+  <rect x="178" y="238" width="4" height="8" fill="#2196f3"/>
+  <circle cx="220" cy="238" r="3" fill="#ff9800"/>
+  <rect x="218" y="241" width="4" height="8" fill="#e91e63"/>
+  
+  <!-- Title overlay -->
+  <rect x="20" y="20" width="360" height="40" fill="rgba(52, 168, 83, 0.9)" rx="8"/>
+  <text x="200" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">University Campus</text>
+  <text x="200" y="55" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">Smart Campus Energy</text>
+  
+  <!-- Stats -->
+  <rect x="20" y="270" width="120" height="20" fill="rgba(26, 115, 232, 0.9)" rx="4"/>
+  <text x="80" y="283" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Carbon Neutral</text>
+  
+  <rect x="260" y="270" width="120" height="20" fill="rgba(156, 39, 176, 0.9)" rx="4"/>
+  <text x="320" y="283" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Research Grade</text>
+</svg>
