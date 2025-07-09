@@ -105,7 +105,7 @@ html, body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   height: 70px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* Transparent Navigation for Home Page */
@@ -440,6 +440,11 @@ html, body {
 
 /* Responsive styles for hero section */
 @media (max-width: 768px) {
+  .hero-container {
+    margin-top: -60px; /* Slightly less for mobile */
+    padding-top: 60px;
+  }
+  
   .hero-content {
     padding: 1rem;
   }
