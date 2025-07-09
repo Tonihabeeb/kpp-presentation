@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -100,7 +101,7 @@ export default function EnterpriseNavBar() {
         {/* Logo Section */}
         <div className="nav-logo">
           <Link href="/" className="logo-link">
-            <img src="/images/deep-engineering-logo.png" alt="Deep Engineering Co." className="logo-image" />
+            <Image src="/images/deep-engineering-logo.png" alt="Deep Engineering Co." className="logo-image" width={40} height={40} />
             <div className="logo-text">
               <span className="company-name">Deep Engineering Co.</span>
               <span className="tagline">Kinetic Power Solutions</span>
@@ -198,9 +199,6 @@ export default function EnterpriseNavBar() {
             <Link href="/contact" className="btn btn-secondary">
               Get Quote
             </Link>
-            <Link href="/demo" className="btn btn-primary">
-              Request Demo
-            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -242,9 +240,6 @@ export default function EnterpriseNavBar() {
             <Link href="/contact" className="btn btn-secondary mobile-btn">
               Get Quote
             </Link>
-            <Link href="/demo" className="btn btn-primary mobile-btn">
-              Request Demo
-            </Link>
           </div>
         </div>
       </div>
@@ -256,15 +251,15 @@ export default function EnterpriseNavBar() {
           left: 0;
           right: 0;
           z-index: 1000;
-          background: rgba(10, 10, 10, 0.95);
+          background: rgba(250, 250, 250, 0.95);
           backdrop-filter: blur(20px);
-          border-bottom: 1px solid #D1D5DB;
+          border-bottom: 1px solid var(--color-border);
           transition: all 0.3s ease;
         }
         
         .enterprise-navbar.scrolled {
-          background: rgba(10, 10, 10, 0.98);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          background: rgba(255, 255, 255, 0.98);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         
         .nav-container {
@@ -309,13 +304,13 @@ export default function EnterpriseNavBar() {
         .company-name {
           font-size: 1.2rem;
           font-weight: 700;
-          color: #F3F4F6;
+          color: var(--color-text);
           line-height: 1.2;
         }
         
         .tagline {
           font-size: 0.8rem;
-          color: #2A57A5;
+          color: var(--color-primary);
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -336,7 +331,7 @@ export default function EnterpriseNavBar() {
           align-items: center;
           gap: 0.5rem;
           padding: 0.5rem 1rem;
-          color: #D1D5DB;
+          color: var(--color-text);
           text-decoration: none;
           font-weight: 500;
           font-size: 0.95rem;
@@ -346,8 +341,8 @@ export default function EnterpriseNavBar() {
         
         .nav-link:hover,
         .nav-link.active {
-          color: #3B82F6;
-          background: rgba(59, 130, 246, 0.1);
+          color: var(--color-primary);
+          background: rgba(42, 87, 165, 0.1);
         }
         
         .dropdown-icon {
@@ -365,10 +360,10 @@ export default function EnterpriseNavBar() {
           top: 100%;
           left: 0;
           min-width: 320px;
-          background: #0A0A0A;
+          background: var(--color-surface);
           border-radius: 12px;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-          border: 1px solid #D1D5DB;
+          box-shadow: var(--shadow-xl);
+          border: 1px solid var(--color-border);
           padding: 1rem;
           margin-top: 0.5rem;
           opacity: 0;
@@ -398,19 +393,19 @@ export default function EnterpriseNavBar() {
         }
         
         .dropdown-item:hover {
-          background: rgba(59, 130, 246, 0.1);
+          background: rgba(42, 87, 165, 0.1);
         }
         
         .dropdown-item-title {
           font-size: 0.95rem;
           font-weight: 600;
-          color: #F3F4F6;
+          color: var(--color-text);
           margin: 0 0 0.3rem 0;
         }
         
         .dropdown-item-description {
           font-size: 0.8rem;
-          color: #D1D5DB;
+          color: var(--color-text-secondary);
           margin: 0;
           line-height: 1.4;
         }

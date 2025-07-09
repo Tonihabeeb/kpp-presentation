@@ -1,0 +1,44 @@
+import SlideLayout from '../../components/SlideLayout.js';
+import Image from 'next/image';
+import Head from 'next/head';
+
+export const meta = { title: "Introduction to KPP Technology" };
+
+<Head>
+  <title>Introduction to KPP Technology - Deep Engineering</title>
+  <meta name="description" content="Welcome to the Kinetic Power Plant (KPP) technology presentation. Revolutionary clean energy solution by Deep Engineering." />
+</Head>
+
+<SlideLayout nextHref="/slides/2-technology" title="Introduction to KPP Technology">
+
+<div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+  <Image
+    src="/images/deep-engineering-logo.png"
+    alt="Deep Engineering - Kinetic Power Plant Technology"
+    width={300}
+    height={150}
+    priority
+  />
+</div>
+
+# Welcome to the KPP Presentation
+
+This **Next.js + MDX** powered slideshow allows mixing text, images, and React components.
+
+- Built with Next.js for a fast, modern experience
+- Write slides in Markdown for ease of editing  
+- **Interactive**: embed React components (charts, etc.) directly in slides
+
+## Welcome to KPP Technology
+
+The Kinetic Power Plant (KPP) is a groundbreaking renewable energy solution developed by Deep Engineering Co.
+
+### Key Features:
+- Revolutionary buoyancy-driven power generation
+- Sustainable and environmentally friendly
+- Scalable from residential to industrial applications
+- Proven technology with operational demonstrations
+
+*This presentation will guide you through the technology, performance metrics, and implementation opportunities.*
+
+</SlideLayout>

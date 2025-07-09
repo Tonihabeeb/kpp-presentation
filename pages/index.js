@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import EnterpriseNavBar from '../components/EnterpriseNavBar';
-import SlideLayout from '../components/SlideLayout';
+import Image from 'next/image';
+import HomeSection from '../components/HomeSection';
 import ExampleChart from '../components/ExampleChart';
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="container home-page">
       <Head>
         <title>KPP Technology - Kinetic Power Plant | Deep Engineering</title>
         <meta name="description" content="Pioneering sustainable energy solutions with Kinetic Power Plant technology. Revolutionary renewable energy generation with minimal environmental impact." />
@@ -17,13 +17,13 @@ const Home = () => {
       {/* Skip to main content for accessibility */}
       <a href="#main-content" className="skip-link">Skip to main content</a>
 
-      <EnterpriseNavBar />
-
       <section className="hero-container" aria-label="Hero section">
         <video autoPlay loop muted playsInline className="hero-video" aria-hidden="true">
-          <source src="https://static.siemens-energy.com/global/assets/videos/sea-turbines.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <source src="https://player.vimeo.com/external/517761798.sd.mp4?s=b34da5b4e6a0c0964823a3cb9affe47d48c88b7e&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+          {/* Fallback for if video fails to load */}
         </video>
+        {/* Background fallback image */}
+        <div className="hero-background-fallback"></div>
         <div className="hero-content">
           <h1>Pioneering Sustainable Energy Solutions</h1>
           <p>Discover how Kinetic Power Plant technology is revolutionizing the energy sector.</p>
@@ -41,46 +41,61 @@ const Home = () => {
       </section>
 
       <main id="main-content">
-        <SlideLayout id="intro" title="Introduction to KPP Technology">
+        <HomeSection id="intro" title="Introduction to KPP Technology">
           <p>
             The Kinetic Power Plant (KPP) is a groundbreaking renewable energy solution developed by Deep Engineering GmbH. It harnesses kinetic energy from flowing water to generate electricity with minimal environmental impact. This presentation provides a technical overview of the KPP technology, its components, and its potential to revolutionize the energy landscape.
           </p>
-        </SlideLayout>
+        </HomeSection>
 
-        <SlideLayout id="key-technology" title="Key Technology Components">
+        <HomeSection id="key-technology" title="Key Technology Components">
           <div className="component-grid">
             <div className="component">
-              <img src="/images/kpp-tower.avif" alt="KPP Tower - Main generator and power systems housing" />
+              <Image src="/images/kpp-tower.avif" alt="KPP Tower - Main generator and power systems housing" width={300} height={200} />
               <h3>KPP Tower</h3>
               <p>The core structure housing the main generator and power systems.</p>
             </div>
             <div className="component">
-              <img src="/images/generator.avif" alt="Generator" />
+              <Image src="/images/generator.avif" alt="Generator" width={300} height={200} />
               <h3>Generator</h3>
               <p>A high-efficiency generator designed for converting kinetic energy into electrical power.</p>
             </div>
             <div className="component">
-              <img src="/images/air-compressor.avif" alt="Air Compressor" />
+              <Image src="/images/air-compressor.avif" alt="Air Compressor" width={300} height={200} />
               <h3>Air Compressor</h3>
               <p>Utilizes compressed air for energy storage and pressure regulation.</p>
             </div>
           </div>
-        </SlideLayout>
+        </HomeSection>
 
-        <SlideLayout id="working-principle" title="Working Principle">
+        <HomeSection id="working-principle" title="Working Principle">
           <p>
             The KPP operates by capturing the kinetic energy of water flow, which drives a turbine connected to a generator. The system is designed for continuous operation and can be deployed in various water bodies, including rivers and tidal streams. An integrated energy storage system ensures a stable power supply.
           </p>
           <ExampleChart />
-        </SlideLayout>
+        </HomeSection>
 
-        <SlideLayout id="contact" title="Contact Us">
+        <HomeSection id="contact" title="Contact Us">
           <p>For inquiries, partnerships, or more information about the KPP technology, please contact us.</p>
           <div className="contact-info">
-            <p>Email: <a href="mailto:info@deep-engineering.de">info@deep-engineering.de</a></p>
-            <p>Phone: +49 123 456 789</p>
+            <div className="contact-item">
+              <strong>Email:</strong> <a href="mailto:info@deep-engineering.de">info@deep-engineering.de</a>
+            </div>
+            <div className="contact-item">
+              <strong>Phone:</strong> <a href="tel:+49123456789">+49 123 456 789</a>
+            </div>
+            <div className="contact-item">
+              <strong>Address:</strong> Deep Engineering GmbH, Innovation District, Germany
+            </div>
           </div>
-        </SlideLayout>
+          <div className="cta-section">
+            <Link href="/contact" className="btn btn-primary">
+              Get in Touch
+            </Link>
+            <Link href="/demo" className="btn btn-secondary">
+              Request Demo
+            </Link>
+          </div>
+        </HomeSection>
       </main>
 
       <style jsx>{`
@@ -129,6 +144,7 @@ const Home = () => {
           max-width: 1200px;
           margin: 0 auto;
           background: var(--color-background);
+          margin-top: 80px; /* Account for fixed enterprise navbar */
         }
 
         .hero-container {
@@ -141,6 +157,7 @@ const Home = () => {
           overflow: hidden;
           color: var(--color-surface);
           text-align: center;
+          margin-top: 80px; /* Account for fixed enterprise navbar */
         }
 
         .hero-video {
@@ -180,6 +197,17 @@ const Home = () => {
         .hero-content p {
           font-size: 1.5rem;
           margin-bottom: 2rem;
+        }
+
+        .hero-fallback {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform: translate(-50%, -50%);
+          z-index: -1;
         }
 
         .cta-buttons .btn {
@@ -243,16 +271,147 @@ const Home = () => {
 
         .component {
           text-align: center;
+          padding: 1.5rem;
+          background: var(--color-background);
+          border-radius: var(--radius-lg);
+          box-shadow: var(--shadow-sm);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .component:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-md);
         }
 
         .component img {
           max-width: 100%;
-          height: auto;
-          border-radius: 8px;
+          height: 200px;
+          width: 100%;
+          object-fit: cover;
+          border-radius: var(--radius-md);
+          margin-bottom: 1rem;
+        }
+
+        .component h3 {
+          color: var(--color-primary);
+          margin: 1rem 0 0.5rem 0;
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+
+        .component p {
+          color: var(--color-text-secondary);
+          line-height: 1.6;
+          margin: 0;
         }
 
         .contact-info {
-          margin-top: 1rem;
+          margin: 2rem 0;
+          display: grid;
+          gap: 1rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .contact-item {
+          padding: 1rem;
+          background: var(--color-secondary-bg);
+          border-radius: var(--radius-md);
+          text-align: center;
+        }
+
+        .contact-item strong {
+          color: var(--color-primary);
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+          color: var(--color-text);
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+          color: var(--color-primary);
+        }
+
+        .cta-section {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          margin-top: 2rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+          .hero-container {
+            height: calc(100vh - 80px);
+            margin-top: 80px;
+          }
+
+          .hero-content h1 {
+            font-size: 2.5rem;
+          }
+          
+          .hero-content p {
+            font-size: 1.2rem;
+          }
+          
+          .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+          }
+          
+          .cta-buttons .btn {
+            margin: 0;
+            width: 200px;
+          }
+          
+          .component-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          .cta-section {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .cta-section .btn {
+            width: 200px;
+          }
+          
+          main {
+            padding: 1rem;
+            margin-top: 60px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-container {
+            height: calc(100vh - 60px);
+            margin-top: 60px;
+          }
+
+          .hero-content h1 {
+            font-size: 2rem;
+          }
+          
+          .hero-content p {
+            font-size: 1rem;
+          }
+          
+          .hero-content {
+            padding: 15px;
+          }
+
+          main {
+            margin-top: 50px;
+          }
         }
       `}</style>
     </div>

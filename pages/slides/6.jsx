@@ -16,7 +16,7 @@ export default function Slide6() {
             <div className="takeaways-grid">
               <div className="takeaway">
                 <h4>🔬 Physics-Based Innovation</h4>
-                <p>KPP leverages well-established physics principles (Archimedes' Principle and Newton's Laws) in an innovative configuration to generate continuous power.</p>
+                <p>KPP leverages well-established physics principles (Archimedes&apos; Principle and Newton&apos;s Laws) in an innovative configuration to generate continuous power.</p>
               </div>
               
               <div className="takeaway">
@@ -131,12 +131,11 @@ export default function Slide6() {
           </div>
         </div>
       </div>
-    </SlideLayout>
-  );
-}
-  .slide {
-    padding: 2rem;
-  }
+
+      <style jsx>{`
+        .slide {
+          padding: 2rem;
+        }
   
   .slide-content {
     margin-top: 2rem;
@@ -237,4 +236,8 @@ export default function Slide6() {
     color: white;
     border-radius: 12px;
     font-style: italic;
-  } 
+  }
+      `}</style>
+    </SlideLayout>
+  );
+}

@@ -68,8 +68,8 @@ export default function Slide3() {
                 />
                 <h4>Physics Principles</h4>
                 <ul>
-                  <li><strong>Archimedes' Principle:</strong> Buoyancy force generation</li>
-                  <li><strong>Newton's 2nd Law:</strong> Motion from net forces</li>
+                  <li><strong>Archimedes&apos; Principle:</strong> Buoyancy force generation</li>
+                  <li><strong>Newton&apos;s 2nd Law:</strong> Motion from net forces</li>
                   <li><strong>Energy Conversion:</strong> Kinetic to mechanical to electrical</li>
                   <li><strong>Continuous Loop:</strong> Perpetual motion through buoyancy cycle</li>
                 </ul>
@@ -84,7 +84,7 @@ export default function Slide3() {
                 <p>
                   The system implements well-known physics principles (buoyancy and gravity) in an innovative configuration. 
                   No laws of physics are violated – the system leverages the potential energy difference between water and air 
-                  within Earth's gravity. The math shows that careful use of buoyancy can indeed yield net positive energy 
+                  within Earth&apos;s gravity. The math shows that careful use of buoyancy can indeed yield net positive energy 
                   when the system is designed to minimize losses and cleverly reuse energy.
                 </p>
               </div>
@@ -106,11 +106,11 @@ export default function Slide3() {
           </div>
         </div>
       </div>
-    </SlideLayout>
-  );
-}
-    padding: 2rem;
-  }
+
+      <style jsx>{`
+        .slide {
+          padding: 2rem;
+        }
   
   .slide-content {
     margin-top: 2rem;
@@ -178,4 +178,8 @@ export default function Slide3() {
     background: #f8f9fa;
     padding: 1.5rem;
     border-radius: 8px;
-  } 
+  }
+      `}</style>
+    </SlideLayout>
+  );
+}

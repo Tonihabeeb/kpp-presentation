@@ -86,7 +86,7 @@ export default function Slide4() {
               <div className="footprint-text">
                 <p>
                   Kinetic Power Plant technology is being successfully deployed across multiple regions. 
-                  These installations demonstrate the system's versatility and global applicability.
+                  These installations demonstrate the system&apos;s versatility and global applicability.
                 </p>
                 
                 <div className="deployment-locations">
@@ -118,11 +118,11 @@ export default function Slide4() {
           </div>
         </div>
       </div>
-    </SlideLayout>
-  );
-}
-    padding: 2rem;
-  }
+
+      <style jsx>{`
+        .slide {
+          padding: 2rem;
+        }
   
   .slide-content {
     margin-top: 2rem;
@@ -222,4 +222,8 @@ export default function Slide4() {
   .global-image {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  } 
+  }
+      `}</style>
+    </SlideLayout>
+  );
+}

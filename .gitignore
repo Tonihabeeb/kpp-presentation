@@ -8,6 +8,7 @@ yarn-error.log*
 .next/
 out/
 build/
+dist/
 
 # Environment variables
 .env
@@ -47,6 +48,26 @@ coverage/
 
 # Dependency directories
 jspm_packages/
+
+# Build artifacts that should not be committed
+*.tsbuildinfo
+
+# Large asset directories (should be handled separately)
+"Kinetic Power Plant (KPP) Technology – Technical Overview_files/"
+
+# Temporary files
+*.tmp
+*.temp
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Optional npm cache directory
 .npm

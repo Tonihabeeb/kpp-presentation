@@ -592,20 +592,20 @@ export default function Technology() {
         }
         
         .highlight-card {
-          background: linear-gradient(135deg, rgba(44,51,61,0.95) 0%, rgba(33,37,41,0.95) 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%);
           padding: 2rem;
           border-radius: 20px;
           text-align: center;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(0,186,179,0.2);
+          border: 1px solid rgba(42,87,165,0.2);
           transition: all 0.3s ease;
         }
         
         .highlight-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(0,186,179,0.2);
-          border-color: var(--accent-primary);
+          box-shadow: 0 20px 40px rgba(42,87,165,0.2);
+          border-color: var(--color-primary);
         }
         
         .highlight-icon {
@@ -618,11 +618,11 @@ export default function Technology() {
           font-size: 1.2rem;
           font-weight: 600;
           margin: 0 0 1rem 0;
-          color: var(--text-primary);
+          color: var(--color-text);
         }
         
         .highlight-card p {
-          color: var(--text-light);
+          color: var(--color-text-secondary);
           line-height: 1.6;
           margin: 0;
         }
@@ -639,13 +639,74 @@ export default function Technology() {
         }
         
         .cta-content {
-          background: linear-gradient(135deg, rgba(44,51,61,0.95) 0%, rgba(33,37,41,0.95) 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%);
           padding: 4rem;
           border-radius: 30px;
           text-align: center;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(0,186,179,0.2);
+          border: 1px solid rgba(42,87,165,0.2);
+        }
+
+        .kpp-specifications {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.8s ease 1.2s;
+        }
+
+        .kpp-specifications.animate-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .real-specs-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+
+        .spec-highlight {
+          background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%);
+          padding: 2rem;
+          border-radius: 20px;
+          text-align: center;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(42,87,165,0.2);
+          transition: all 0.3s ease;
+        }
+
+        .spec-highlight:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(42,87,165,0.2);
+          border-color: var(--color-primary);
+        }
+
+        .spec-highlight .spec-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          display: block;
+        }
+
+        .spec-highlight h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin: 0 0 1rem 0;
+          color: var(--color-text);
+        }
+
+        .spec-highlight .spec-value {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: var(--color-primary);
+          margin: 0.5rem 0;
+        }
+
+        .spec-highlight p {
+          color: var(--color-text-secondary);
+          line-height: 1.6;
+          margin: 0;
         }
         
         .cta-content h2 {

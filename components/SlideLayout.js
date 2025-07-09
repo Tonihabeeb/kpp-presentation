@@ -1,68 +1,37 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
-export default function SlideLayout({ children, slideNumber, totalSlides }) {
-  const router = useRouter();
-  const [prevHref, setPrevHref] = useState(null);
-  const [nextHref, setNextHref] = useState(null);
-
+export default function SlideLayout({ children, prevHref = null, nextHref = null, title = "" }) {
+  // Keyboard navigation
   useEffect(() => {
-    // Calculate navigation links
-    if (slideNumber > 1) {
-      setPrevHref(`/slides/${slideNumber - 1}`);
-    } else {
-      setPrevHref(null);
-    }
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowLeft' && prevHref) {
+        window.location.href = prevHref;
+      } else if (e.key === 'ArrowRight' && nextHref) {
+        window.location.href = nextHref;
+      }
+    };
 
-    if (slideNumber < totalSlides) {
-      setNextHref(`/slides/${slideNumber + 1}`);
-    } else {
-      setNextHref(null);
-    }
-  }, [slideNumber, totalSlides]);
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'ArrowLeft' && prevHref) {
-      router.push(prevHref);
-    } else if (e.key === 'ArrowRight' && nextHref) {
-      router.push(nextHref);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyPress);
-    return () => document.removeEventListener('keydown', handleKeyPress);
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
   }, [prevHref, nextHref]);
 
   return (
-    <div className="slide-layout">
-      <div className="slide-content">
+    <div className="slide-container">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <div className="slide-content" id="main-content">
+        {title && (
+          <div className="title-section">
+            <h1>{title}</h1>
+          </div>
+        )}
         {children}
       </div>
-      
-      <div className="slide-navigation">
-        {prevHref && (
-          <button 
-            onClick={() => router.push(prevHref)}
-            className="nav-button prev"
-          >
-            ← Previous
-          </button>
-        )}
-        
-        <span className="slide-counter">
-          {slideNumber} / {totalSlides}
-        </span>
-        
-        {nextHref && (
-          <button 
-            onClick={() => router.push(nextHref)}
-            className="nav-button next"
-          >
-            Next →
-          </button>
-        )}
+      {/* Navigation controls */}
+      <div className="nav-buttons">
+        {prevHref && <Link href={prevHref} className="nav-button" aria-label={`Previous slide: ${prevHref}`}>← Previous</Link>}
+        {nextHref && <Link href={nextHref} className="nav-button" aria-label={`Next slide: ${nextHref}`}>Next →</Link>}
       </div>
     </div>
   );
-} 
+}

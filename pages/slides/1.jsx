@@ -7,7 +7,7 @@ export default function Slide1() {
       <div className="slide-content">
         <div className="title-section">
           <div className="logo-section">
-            <img src="/images/deep-engineering-logo.png" alt="Deep Engineering Co." className="company-logo" />
+            <Image src="/images/deep-engineering-logo.png" alt="Deep Engineering Co." className="company-logo" width={200} height={80} />
           </div>
           <h1>Kinetic Power Plant (KPP) Technology</h1>
           <h2>Technical Overview</h2>
@@ -26,7 +26,7 @@ export default function Slide1() {
             <div className="key-features">
               <div className="feature">
                 <h4>🌊 Buoyancy-Driven</h4>
-                <p>Uses Archimedes' Principle to generate continuous motion</p>
+                <p>Uses Archimedes&apos; Principle to generate continuous motion</p>
               </div>
               <div className="feature">
                 <h4>⚡ 24/7 Operation</h4>
@@ -59,100 +59,101 @@ export default function Slide1() {
           <p><strong>Deep Engineering Co.</strong> - Global patent-holder of the Kinetic Power Plant (KPP®) buoyancy-drive technology</p>
         </div>
       </div>
+
+      <style jsx>{`
+        .slide {
+          padding: 2rem;
+          text-align: center;
+        }
+        
+        .slide-content {
+          margin-top: 2rem;
+        }
+        
+        .logo-section {
+          margin-bottom: 1rem;
+        }
+        
+        .company-logo {
+          width: 120px;
+          height: 60px;
+          object-fit: contain;
+          border-radius: 8px;
+          margin: 0 auto;
+        }
+        
+        .main-tower-placeholder {
+          width: 400px;
+          height: 300px;
+          background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+          border: 2px solid #ddd;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .main-tower-placeholder h4 {
+          margin: 0 0 0.5rem 0;
+          color: #333;
+        }
+        
+        .main-tower-placeholder p {
+          margin: 0;
+          color: #666;
+        }
+        
+        .intro-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          align-items: start;
+          margin: 2rem 0;
+        }
+        
+        .intro-text {
+          text-align: left;
+        }
+        
+        .key-features {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+          margin-top: 1.5rem;
+        }
+        
+        .feature {
+          background: #f8f9fa;
+          padding: 1rem;
+          border-radius: 8px;
+          border-left: 4px solid #007bff;
+        }
+        
+        .intro-image {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .main-tower-image {
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+          margin-top: 1rem;
+          text-align: center;
+        }
+        
+        .company-info {
+          margin-top: 2rem;
+          padding: 1rem;
+          background: #e9ecef;
+          border-radius: 8px;
+        }
+      `}</style>
     </SlideLayout>
   );
 }
-  .slide {
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .slide-content {
-    margin-top: 2rem;
-  }
-  
-  .logo-section {
-    margin-bottom: 1rem;
-  }
-  
-  .company-logo {
-    width: 120px;
-    height: 60px;
-    object-fit: contain;
-    border-radius: 8px;
-    margin: 0 auto;
-  }
-  
-
-  
-  .main-tower-placeholder {
-    width: 400px;
-    height: 300px;
-    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  .main-tower-placeholder h4 {
-    margin: 0 0 0.5rem 0;
-    color: #333;
-  }
-  
-  .main-tower-placeholder p {
-    margin: 0;
-    color: #666;
-  }
-  
-  .intro-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-    margin: 2rem 0;
-  }
-  
-  .intro-text {
-    text-align: left;
-  }
-  
-  .key-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  
-  .feature {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    border-left: 4px solid #007bff;
-  }
-  
-  .intro-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .main-tower-image {
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  .image-caption {
-    margin-top: 1rem;
-    text-align: center;
-  }
-  
-  .company-info {
-    margin-top: 2rem;
-    padding: 1rem;
-    background: #e9ecef;
-    border-radius: 8px;
-  } 

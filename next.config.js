@@ -1,13 +1,46 @@
+const createMDX = require('@next/mdx');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx'],
-  experimental: {
-    mdxRs: false,
-  },
+  reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'], // recognize MDX pages
+  
   images: {
-    domains: ['localhost'],
-    unoptimized: true,
+    domains: [
+      'localhost', 
+      'static.siemens-energy.com',
+      // Add other trusted image domains as needed
+    ],
+    unoptimized: false, // Enable Next.js image optimization
+    formats: ['image/webp', 'image/avif'],
   },
+
+  // Performance optimizations
+  poweredByHeader: false,
+  
+  // Security headers
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+        ],
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {
@@ -18,4 +51,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig; 
+module.exports = createMDX()(nextConfig); // Enable MDX transformation 

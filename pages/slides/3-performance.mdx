@@ -1,0 +1,40 @@
+import SlideLayout from '../../components/SlideLayout.js';
+import PerformanceChart from '../../components/PerformanceChart.js';
+import Head from 'next/head';
+
+export const meta = { title: "KPP Performance Data" };
+
+<Head>
+  <title>KPP Performance Data - Deep Engineering</title>
+  <meta name="description" content="Real-world performance metrics of KPP systems showing 95% efficiency and 99.8% uptime in field testing." />
+</Head>
+
+<SlideLayout prevHref="/slides/2-technology" nextHref="/slides/4-implementation" title="KPP Performance Data">
+
+# Performance Analysis
+
+## Real-World Performance Data
+
+The following chart shows the performance metrics of our KPP systems across different operational conditions:
+
+<div style={{ margin: '2rem 0', padding: '1rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
+  <PerformanceChart />
+</div>
+
+## Key Performance Indicators
+
+- **Peak Efficiency**: Up to 95% energy conversion
+- **Continuous Output**: Stable power generation 24/7
+- **Scalability**: Linear performance scaling with unit count
+- **Reliability**: 99.8% uptime in field testing
+
+## Comparative Analysis
+
+| Metric | KPP Technology | Traditional Solar | Wind Power |
+|--------|----------------|-------------------|------------|
+| Uptime | 99.8% | 65% (daylight only) | 75% (wind dependent) |
+| Efficiency | 95% | 20-22% | 35-45% |
+| Location Dependency | None | High | High |
+| Maintenance | Minimal | Moderate | High |
+
+</SlideLayout>

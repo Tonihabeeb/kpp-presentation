@@ -1,0 +1,61 @@
+import SlideLayout from '../../components/SlideLayout.js';
+import Image from 'next/image';
+import Head from 'next/head';
+
+export const meta = { title: "KPP Technology Overview" };
+
+<Head>
+  <title>KPP Technology Overview - Deep Engineering</title>
+  <meta name="description" content="Learn about the revolutionary Kinetic Power Plant technology - buoyancy-driven system for continuous clean energy generation." />
+</Head>
+
+<SlideLayout prevHref="/slides/1-introduction" nextHref="/slides/3-performance" title="KPP Technology Overview">
+
+# KPP Technology Details
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', margin: '2rem 0' }}>
+  <div style={{ textAlign: 'center' }}>
+    <Image
+      src="/images/kpp-tower.avif"
+      alt="KPP Tower System - Main power generation unit"
+      width={250}
+      height={200}
+      style={{ borderRadius: '8px' }}
+    />
+    <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>KPP Tower System</p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <Image
+      src="/images/generator.avif"
+      alt="Generator components of the KPP system"
+      width={250}
+      height={200}
+      style={{ borderRadius: '8px' }}
+    />
+    <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: '#666' }}>Generator Components</p>
+  </div>
+</div>
+
+## How It Works
+
+The Kinetic Power Plant utilizes a revolutionary buoyancy-driven system:
+
+1. **Buoyancy Chamber**: Sealed chamber with controlled air pressure
+2. **Floating Elements**: Specially designed floaters that respond to pressure changes
+3. **Generator System**: Converts kinetic motion to electrical energy
+4. **Control Systems**: Automated monitoring and optimization
+
+## Core Principles
+
+- **Archimedes' Principle**: Leveraging buoyancy force for continuous motion
+- **Energy Conservation**: Efficient conversion of kinetic to electrical energy
+- **Scalable Design**: Modular architecture for various power requirements
+
+## Advantages
+
+- ✅ **Zero Emissions**: Completely clean energy generation
+- ✅ **Continuous Operation**: 24/7 power generation capability
+- ✅ **Low Maintenance**: Minimal moving parts and wear
+- ✅ **Location Independent**: No dependency on weather or geography
+
+</SlideLayout>

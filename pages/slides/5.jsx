@@ -17,7 +17,7 @@ export default function Slide5() {
               <div className="overview-text">
                 <p>
                   Kinetic Power Plant technology offers versatile energy solutions that can be adapted 
-                  to various market segments and geographical locations. The system's scalability and 
+                  to various market segments and geographical locations. The system&apos;s scalability and 
                   zero-emission operation make it suitable for both developed and developing markets.
                 </p>
               </div>
@@ -152,12 +152,10 @@ export default function Slide5() {
           </div>
         </div>
       </div>
-    </SlideLayout>
-  );
-}
-  .slide {
-    padding: 2rem;
-  }
+      <style jsx>{`
+        .slide {
+          padding: 2rem;
+        }
   
   .slide-content {
     margin-top: 2rem;
@@ -241,4 +239,8 @@ export default function Slide5() {
   .large-scale-image {
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  } 
+  }
+      `}</style>
+    </SlideLayout>
+  );
+}

@@ -1,0 +1,34 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Deep Engineering Logo -->
+  <defs>
+    <style>
+      .logo-text {
+        fill: white;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+      }
+      .logo-subtext {
+        fill: white;
+        font-family: Arial, sans-serif;
+        font-weight: normal;
+      }
+    </style>
+  </defs>
+  
+  <!-- Gear/Circular Element -->
+  <circle cx="25" cy="30" r="20" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="25" cy="30" r="12" fill="none" stroke="white" stroke-width="1.5"/>
+  <circle cx="25" cy="30" r="6" fill="white"/>
+  
+  <!-- Gear teeth -->
+  <rect x="23" y="8" width="4" height="6" fill="white"/>
+  <rect x="23" y="46" width="4" height="6" fill="white"/>
+  <rect x="3" y="28" width="6" height="4" fill="white"/>
+  <rect x="41" y="28" width="6" height="4" fill="white"/>
+  
+  <!-- DEEP text -->
+  <text x="55" y="25" class="logo-text" font-size="16">DEEP</text>
+  
+  <!-- ENGINEERING text -->
+  <text x="55" y="45" class="logo-text" font-size="16">ENGINEERING</text>
+</svg>

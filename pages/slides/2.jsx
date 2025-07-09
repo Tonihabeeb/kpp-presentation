@@ -14,11 +14,11 @@ export default function Slide2() {
           <div className="physics-principles">
             <h3>🔬 Physics Foundation</h3>
             <div className="principle">
-              <h4>Archimedes' Principle (Buoyancy)</h4>
+              <h4>Archimedes&apos; Principle (Buoyancy)</h4>
               <p>A body submerged in a fluid experiences an upward thrust equal to the weight of the displaced fluid. In KPP, air-filled containers in water create buoyant force.</p>
             </div>
             <div className="principle">
-              <h4>Newton's 2nd Law (Motion)</h4>
+              <h4>Newton&apos;s 2nd Law (Motion)</h4>
               <p>The net force from buoyancy and gravity causes acceleration and motion. KPP harnesses this motion in a continuous loop. The kinetic energy of the moving floaters is converted to mechanical rotation to drive generators.</p>
             </div>
           </div>
@@ -99,10 +99,8 @@ export default function Slide2() {
           </div>
         </div>
       </div>
-    </SlideLayout>
-  );
-}
-  .slide {
+
+      <style jsx>{`.slide {
     padding: 2rem;
   }
   
@@ -176,4 +174,8 @@ export default function Slide2() {
     justify-content: center;
     margin: 0 auto 0.5rem;
     font-weight: bold;
-  } 
+  }
+      `}</style>
+    </SlideLayout>
+  );
+}
