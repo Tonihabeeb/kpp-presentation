@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_stats_sections",
+  "info": {
+    "displayName": "Stats Section",
+    "description": "Display key statistics and numbers prominently"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.stat"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": ["horizontal", "grid-2", "grid-3", "grid-4"],
+      "default": "horizontal"
+    }
+  }
+}

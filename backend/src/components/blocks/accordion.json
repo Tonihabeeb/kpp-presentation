@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_accordions",
+  "info": {
+    "displayName": "Accordion",
+    "description": "Collapsible content sections"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.accordion-item"
+    },
+    "allowMultiple": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

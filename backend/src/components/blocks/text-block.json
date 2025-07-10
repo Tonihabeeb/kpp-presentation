@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_text_blocks",
+  "info": {
+    "displayName": "Text Block",
+    "description": "Rich text content with formatting options"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": ["left", "center", "right", "justify"],
+      "default": "left"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "padding": {
+      "type": "enumeration",
+      "enum": ["none", "small", "medium", "large"],
+      "default": "medium"
+    },
+    "maxWidth": {
+      "type": "enumeration",
+      "enum": ["small", "medium", "large", "full"],
+      "default": "large"
+    }
+  }
+}

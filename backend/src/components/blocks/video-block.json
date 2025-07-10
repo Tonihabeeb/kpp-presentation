@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_blocks_video_blocks",
+  "info": {
+    "displayName": "Video Block",
+    "description": "Video player with customizable options"
+  },
+  "options": {},
+  "attributes": {
+    "videoFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"]
+    },
+    "videoURL": {
+      "type": "string"
+    },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "muted": {
+      "type": "boolean",
+      "default": false
+    },
+    "controls": {
+      "type": "boolean",
+      "default": true
+    },
+    "loop": {
+      "type": "boolean",
+      "default": false
+    },
+    "caption": {
+      "type": "text"
+    }
+  }
+}

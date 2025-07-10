@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_blocks_image_blocks",
+  "info": {
+    "displayName": "Image Block",
+    "description": "Image with caption and styling options"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "caption": {
+      "type": "text"
+    },
+    "altText": {
+      "type": "string"
+    },
+    "imageAlignment": {
+      "type": "enumeration",
+      "enum": ["left", "center", "right"],
+      "default": "center"
+    },
+    "imageSize": {
+      "type": "enumeration",
+      "enum": ["small", "medium", "large", "full"],
+      "default": "large"
+    },
+    "borderRadius": {
+      "type": "enumeration",
+      "enum": ["none", "small", "medium", "large", "full"],
+      "default": "none"
+    },
+    "shadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

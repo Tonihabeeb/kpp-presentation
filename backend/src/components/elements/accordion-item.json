@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_accordion_items",
+  "info": {
+    "displayName": "Accordion Item",
+    "description": "Single accordion panel"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "isOpenByDefault": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

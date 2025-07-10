@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": "Dynamic page builder with flexible content blocks"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.hero-section",
+        "blocks.text-block",
+        "blocks.image-block",
+        "blocks.video-block",
+        "blocks.two-column-layout",
+        "blocks.three-column-layout",
+        "blocks.stats-section",
+        "blocks.feature-grid",
+        "blocks.timeline",
+        "blocks.chart-block",
+        "blocks.button-group",
+        "blocks.quote-block",
+        "blocks.gallery",
+        "blocks.accordion",
+        "blocks.slider"
+      ]
+    },
+    "navigation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.navigation"
+    }
+  }
+}

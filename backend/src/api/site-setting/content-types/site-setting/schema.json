@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_settings",
+  "info": {
+    "singularName": "site-setting",
+    "pluralName": "global-settings",
+    "displayName": "Site Settings",
+    "description": "Global site configuration and settings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "siteName": {
+      "type": "string",
+      "required": true,
+      "default": "KPP Presentation"
+    },
+    "siteDescription": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "primaryColor": {
+      "type": "string",
+      "default": "#007bff"
+    },
+    "secondaryColor": {
+      "type": "string",
+      "default": "#6c757d"
+    },
+    "mainNavigation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.nav-item"
+    },
+    "footerContent": {
+      "type": "richtext"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.social-link"
+    }
+  }
+}
