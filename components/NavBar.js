@@ -4,61 +4,49 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 
 const navItems = [
-  { label: '🏠 Home', href: '/' },
+  { label: 'Home', href: '/' },
   { 
-    label: '🔬 Technology', 
+    label: 'Solutions', 
+    href: '/solutions',
+    dropdown: [
+      { label: 'Commercial Applications', href: '/solutions/commercial' },
+      { label: 'Government Projects', href: '/solutions/government' },
+      { label: 'Utility Integration', href: '/solutions/utility' },
+      { label: 'Industrial Solutions', href: '/solutions' }
+    ]
+  },
+  { 
+    label: 'Technology', 
     href: '/technology',
     dropdown: [
-      { label: 'Core Technology', href: '/technology/core' },
-      { label: 'Technical Specifications', href: '/technology/specifications' },
+      { label: 'How It Works', href: '/technology/core' },
       { label: 'Performance Data', href: '/technology/performance' },
-      { label: 'Technology Overview', href: '/technology/overview' },
-      { label: 'Technology Comparison', href: '/technology/comparison' }
+      { label: 'Technical Specifications', href: '/technology/specifications' },
+      { label: 'Innovation Pipeline', href: '/technology' }
     ]
   },
   { 
-    label: '📋 Presentation', 
-    href: '/presentation',
-    dropdown: [
-      { label: 'Slide 1 - Introduction', href: '/slides/1' },
-      { label: 'Slide 2 - Technology', href: '/slides/2' },
-      { label: 'Slide 3 - Performance', href: '/slides/3' },
-      { label: 'Slide 4 - Implementation', href: '/slides/4' },
-      { label: 'Slide 5 - Conclusion', href: '/slides/5' },
-      { label: 'Full Presentation', href: '/presentation/full' }
-    ]
-  },
-  { 
-    label: '📊 Resources', 
+    label: 'Resources', 
     href: '/resources',
     dropdown: [
-      { label: 'Major Projects', href: '/resources/projects' },
-      { label: 'Performance Data', href: '/performance' },
-      { label: 'Economics', href: '/resources/economics' },
-      { label: 'Demo Materials', href: '/resources/demo' }
+      { label: 'Case Studies', href: '/resources/case-studies' },
+      { label: 'White Papers', href: '/resources/center' },
+      { label: 'Technical Documentation', href: '/resources' },
+      { label: 'Media Kit', href: '/resources/media' }
     ]
   },
   { 
-    label: '🎓 Webinars', 
-    href: '/webinars',
-    dropdown: [
-      { label: 'Introduction to KPP', href: '/webinars/introduction' },
-      { label: 'Technology Comparison', href: '/webinars/comparison' },
-      { label: 'Financial Benefits', href: '/webinars/financial' }
-    ]
-  },
-  { 
-    label: '🏢 Company', 
+    label: 'Company', 
     href: '/company',
     dropdown: [
-      { label: 'About Us', href: '/company/about' },
-      { label: 'Leadership', href: '/company/leadership' },
+      { label: 'About Deep Engineering', href: '/company/about' },
+      { label: 'Leadership Team', href: '/company/leadership' },
       { label: 'Services', href: '/company/services' },
-      { label: 'Investors', href: '/company/investors' }
+      { label: 'Partnerships', href: '/partnerships' }
     ]
   },
-  { label: '🚀 Analytics', href: '/analytics' },
-  { label: '⚙️ Admin', href: '/administration' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' }
 ];
 
 export default function NavBar() {

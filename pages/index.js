@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import IndustrialNavbar from '../components/IndustrialNavbar';
-import IndustrialHero from '../components/IndustrialHero';
+import NavBar from '../components/NavBar';
 import { MetricsGrid } from '../components/DataVisualization';
 import IndustrialFooter from '../components/IndustrialFooter';
+import { useEffect } from 'react';
 
 export default function Home() {
   const performanceMetrics = [
@@ -49,11 +49,16 @@ export default function Home() {
     }
   ];
 
-  const heroStats = [
-    { value: "100kW", label: "Power Output" },
-    { value: "95%", label: "Efficiency" },
-    { value: "24/7", label: "Operation" }
-  ];
+  useEffect(() => {
+    // Start video autoplay after hydration
+    const video = document.querySelector('.hero-video');
+    if (video) {
+      video.autoplay = true;
+      video.play().catch(() => {
+        // Autoplay failed, which is fine
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -67,26 +72,57 @@ export default function Home() {
 
       <a href="#main" className="skip-link">Skip to main content</a>
       
-      <IndustrialNavbar />
+      <NavBar />
 
       <main id="main">
-        {/* Hero Section */}
-        <IndustrialHero
-          subtitle="Revolutionary Energy Technology"
-          title="Kinetic Power Plant Solutions"
-          description="Transform kinetic energy into sustainable power with our cutting-edge KPP technology. Delivering 100kW of continuous, clean energy for industrial applications."
-          primaryAction="🎯 Request Demo"
-          secondaryAction="📄 View Documentation"
-          backgroundType="gradient"
-          stats={heroStats}
-        />
+        {/* Vestas-Style Hero Section */}
+        <section className="vestas-hero" aria-label="Hero section">
+          <video 
+            loop 
+            muted 
+            playsInline 
+            className="hero-video" 
+            aria-hidden="true"
+            poster="/images/hero-poster.jpg"
+            suppressHydrationWarning
+          >
+            <source src="https://player.vimeo.com/external/517761798.sd.mp4?s=b34da5b4e6a0c0964823a3cb9affe47d48c88b7e&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+          </video>
+          <div className="hero-overlay"></div>
+          <div className="hero-content">
+            <h1 className="vestas-heading-1">Pioneering Sustainable Energy Solutions</h1>
+            <h2 className="vestas-tagline">Building the Solutions of Tomorrow for Business & Government</h2>
+            <div className="hero-stats">
+              <div className="stat">
+                <span className="stat-number">20%</span>
+                <span className="stat-label">Higher Efficiency</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">100kW</span>
+                <span className="stat-label">Power Output</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">99%</span>
+                <span className="stat-label">Uptime</span>
+              </div>
+            </div>
+            <div className="hero-actions">
+              <Link href="#technology" className="vestas-button-primary">
+                Explore Technology
+              </Link>
+              <Link href="/contact" className="vestas-button-secondary">
+                Request Demo
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Performance Metrics */}
-        <section className="section bg-light">
+        <section id="technology" className="section bg-light">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-primary mb-4">Performance Excellence</h2>
-              <p className="text-muted">
+              <h2 className="vestas-heading-2" style={{color: 'var(--vestas-primary)'}}>Performance Excellence</h2>
+              <p className="vestas-body-large">
                 Real-time performance data from our industrial KPP installations
               </p>
             </div>

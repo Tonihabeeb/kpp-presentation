@@ -1,19 +1,37 @@
-/* Siemens iX Design Tokens - Custom Implementation */
+/* Vestas-Inspired Design System - Corporate Energy Theme */
 :root {
-  /* Siemens Brand Colors */
-  --siemens-primary: #009999;
-  --siemens-primary-light: #00bcd4;
-  --siemens-primary-dark: #00796b;
-  --siemens-secondary: #1976d2;
-  --siemens-accent: #00e5ff;
+  /* Vestas-Inspired Primary Colors */
+  --vestas-primary: #104277;           /* Deep corporate blue */
+  --vestas-primary-light: #1565c0;     /* Lighter blue for highlights */
+  --vestas-primary-dark: #0d47a1;      /* Darker blue for depth */
+  --vestas-secondary: #1976d2;         /* Secondary blue */
+  --vestas-accent: #2196f3;            /* Accent blue */
   
-  /* Industrial Theme */
+  /* Sustainability Colors */
+  --vestas-green: #2e7d32;             /* Sustainability green */
+  --vestas-green-light: #4caf50;       /* Light green for highlights */
+  --vestas-green-accent: #66bb6a;      /* Accent green */
+  
+  /* Industrial Theme (Updated) */
   --industrial-dark: #1a1a1a;
   --industrial-medium: #2d2d2d;
   --industrial-light: #404040;
-  --industrial-accent: #009999;
+  --industrial-accent: #104277;
   
-  /* Neutral Palette */
+  /* Professional Neutrals - Vestas Style */
+  --vestas-white: #ffffff;
+  --vestas-gray-50: #fafafa;
+  --vestas-gray-100: #f5f5f5;
+  --vestas-gray-200: #eeeeee;
+  --vestas-gray-300: #e0e0e0;
+  --vestas-gray-400: #bdbdbd;
+  --vestas-gray-500: #9e9e9e;
+  --vestas-gray-600: #757575;
+  --vestas-gray-700: #616161;
+  --vestas-gray-800: #424242;
+  --vestas-gray-900: #212121;
+  
+  /* Neutral Palette (Maintained for compatibility) */
   --neutral-50: #fafafa;
   --neutral-100: #f5f5f5;
   --neutral-200: #eeeeee;
@@ -25,14 +43,15 @@
   --neutral-800: #424242;
   --neutral-900: #212121;
   
-  /* Semantic Colors */
-  --success: #4caf50;
-  --warning: #ff9800;
-  --error: #f44336;
-  --info: #2196f3;
+  /* Semantic Colors - Updated for Vestas Theme */
+  --success: var(--vestas-green);
+  --warning: #ff8f00;
+  --error: #d32f2f;
+  --info: var(--vestas-primary-light);
   
-  /* Typography */
-  --font-family-primary: "Siemens Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  /* Typography - Vestas Professional Style */
+  --font-family-primary: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-family-heading: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-family-mono: "Consolas", "Monaco", "Courier New", monospace;
   
   /* Spacing (8px grid system) */
@@ -252,19 +271,35 @@ html, body {
   right: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--vestas-gray-200);
+  box-shadow: 0 2px 10px rgba(16, 66, 119, 0.1);
   z-index: 1000;
   height: 70px;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Transparent Navigation for Home Page */
+/* Vestas-Style Scrolled Navbar */
+.professional-navbar.scrolled {
+  background: rgba(16, 66, 119, 0.95);
+  border-bottom: 1px solid rgba(16, 66, 119, 0.2);
+  box-shadow: 0 4px 20px rgba(16, 66, 119, 0.3);
+}
+
+.professional-navbar.scrolled .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.professional-navbar.scrolled .nav-link:hover,
+.professional-navbar.scrolled .nav-link.active {
+  color: white;
+}
+
+/* Transparent Navigation for Hero Sections */
 .professional-navbar[data-transparent="true"] {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(16, 66, 119, 0.1);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(16, 66, 119, 0.1);
 }
 
 .professional-navbar[data-transparent="true"] .nav-link {
@@ -274,18 +309,19 @@ html, body {
 .professional-navbar[data-transparent="true"] .nav-link:hover,
 .professional-navbar[data-transparent="true"] .nav-link.active {
   color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .professional-navbar[data-transparent="true"] .cta-button {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(16, 66, 119, 0.8);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .professional-navbar[data-transparent="true"] .cta-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--vestas-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(16, 66, 119, 0.4);
 }
 
 .professional-navbar[data-transparent="true"] .mobile-menu-btn span {
@@ -2042,4 +2078,224 @@ html {
 
 .modern-button:hover::before {
   left: 100%;
+}
+
+/* Vestas-Style Typography System */
+.vestas-heading-1 {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;           /* 48px */
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--vestas-gray-900);
+}
+
+.vestas-heading-2 {
+  font-family: var(--font-family-heading);
+  font-size: 2.25rem;        /* 36px */
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--vestas-gray-900);
+}
+
+.vestas-heading-3 {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;         /* 24px */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--vestas-gray-800);
+}
+
+.vestas-body-large {
+  font-family: var(--font-family-primary);
+  font-size: 1.125rem;       /* 18px */
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--vestas-gray-700);
+}
+
+.vestas-body {
+  font-family: var(--font-family-primary);
+  font-size: 1rem;           /* 16px */
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--vestas-gray-700);
+}
+
+.vestas-label {
+  font-family: var(--font-family-primary);
+  font-size: 0.875rem;       /* 14px */
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--vestas-gray-600);
+}
+
+.vestas-tagline {
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;        /* 20px */
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--vestas-gray-600);
+  opacity: 0.9;
+}
+
+/* Vestas-Style Button System */
+.vestas-button-primary {
+  background: var(--vestas-primary);
+  color: var(--vestas-white);
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.vestas-button-primary:hover {
+  background: var(--vestas-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 66, 119, 0.3);
+}
+
+.vestas-button-secondary {
+  background: transparent;
+  color: var(--vestas-primary);
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--vestas-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.vestas-button-secondary:hover {
+  background: var(--vestas-primary);
+  color: var(--vestas-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 66, 119, 0.2);
+}
+
+/* Vestas-Style Hero Section */
+.vestas-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vestas-hero .hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.vestas-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(16, 66, 119, 0.7) 0%,
+    rgba(13, 71, 161, 0.5) 50%,
+    rgba(33, 150, 243, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+.vestas-hero .hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--vestas-white);
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.vestas-hero .hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.vestas-hero .stat {
+  text-align: center;
+}
+
+.vestas-hero .stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--vestas-white);
+  line-height: 1;
+}
+
+.vestas-hero .stat-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vestas-hero .hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .vestas-heading-1 {
+    font-size: 2.5rem;
+  }
+  
+  .vestas-heading-2 {
+    font-size: 2rem;
+  }
+  
+  .vestas-hero .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .vestas-hero .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vestas-button-primary,
+  .vestas-button-secondary {
+    width: 100%;
+    max-width: 280px;
+  }
 }
