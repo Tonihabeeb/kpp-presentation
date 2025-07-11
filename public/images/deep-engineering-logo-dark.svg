@@ -1,0 +1,61 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-text {
+        fill: #1a1a1a;
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+      }
+      .logo-subtext {
+        fill: rgba(26, 26, 26, 0.7);
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+      .logo-icon {
+        fill: #1a1a1a;
+      }
+      .logo-accent {
+        fill: #00bcd4;
+      }
+    </style>
+    <linearGradient id="iconGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00bcd4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0288d1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon: Stylized gear/turbine representing engineering -->
+  <g transform="translate(8, 8)">
+    <!-- Outer ring -->
+    <circle cx="22" cy="22" r="20" fill="none" stroke="url(#iconGradientDark)" stroke-width="2"/>
+    
+    <!-- Inner turbine/gear -->
+    <g transform="translate(22, 22)">
+      <!-- Center circle -->
+      <circle cx="0" cy="0" r="6" fill="url(#iconGradientDark)"/>
+      
+      <!-- Turbine blades -->
+      <g stroke="url(#iconGradientDark)" stroke-width="2" fill="none">
+        <path d="M 0,-12 L 4,-8 L 0,-6 L -4,-8 Z" fill="#1a1a1a"/>
+        <path d="M 12,0 L 8,4 L 6,0 L 8,-4 Z" fill="#1a1a1a"/>
+        <path d="M 0,12 L -4,8 L 0,6 L 4,8 Z" fill="#1a1a1a"/>
+        <path d="M -12,0 L -8,-4 L -6,0 L -8,4 Z" fill="#1a1a1a"/>
+        
+        <!-- Diagonal blades -->
+        <path d="M 8.5,-8.5 L 6,-6 L 8.5,-4.5 L 11,-7 Z" fill="rgba(26,26,26,0.7)"/>
+        <path d="M 8.5,8.5 L 11,7 L 8.5,4.5 L 6,6 Z" fill="rgba(26,26,26,0.7)"/>
+        <path d="M -8.5,8.5 L -6,6 L -8.5,4.5 L -11,7 Z" fill="rgba(26,26,26,0.7)"/>
+        <path d="M -8.5,-8.5 L -11,-7 L -8.5,-4.5 L -6,-6 Z" fill="rgba(26,26,26,0.7)"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Company Name -->
+  <text x="55" y="25" class="logo-text" font-size="18">DEEP</text>
+  <text x="55" y="43" class="logo-text" font-size="14">ENGINEERING</text>
+  
+  <!-- Tagline -->
+  <text x="55" y="54" class="logo-subtext" font-size="8">KINETIC POWER SOLUTIONS</text>
+</svg>

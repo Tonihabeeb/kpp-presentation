@@ -10,6 +10,8 @@ A modern, enterprise-grade presentation website showcasing Kinetic Power Plant (
 - **Responsive Design**: Mobile-first design with accessibility features
 - **Performance Optimized**: Image optimization, lazy loading, and efficient bundling
 - **Professional Styling**: Custom design system with CSS variables
+- **Static Site Generation**: Fast, SEO-friendly static pages
+- **MDX Support**: Rich content with Markdown and React components
 
 ## 📋 Prerequisites
 
@@ -31,14 +33,13 @@ Before you begin, ensure you have the following installed:
    npm install
    ```
 
-3. **Copy asset files** (if needed):
+3. **Set up environment variables**:
    ```bash
-   npm run copy-assets
+   cp .env.local.example .env.local
+   # Edit .env.local with your configuration
    ```
 
-## 🚦 Getting Started
-
-### Development
+## 🚀 Development
 
 Start the development server:
 
@@ -46,170 +47,177 @@ Start the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the application.
+The application will be available at:
+- **Main Site**: http://localhost:3000 (or next available port)
 
-### Building for Production
+## 📦 Build & Deploy
 
-```bash
-npm run build
-npm start
-```
+1. **Build the application**:
+   ```bash
+   npm run build
+   ```
 
-### Other Commands
+2. **Start production server**:
+   ```bash
+   npm start
+   ```
 
-```bash
-# Run linting
-npm run lint
-
-# Fix linting issues automatically
-npm run lint:fix
-
-# Type checking
-npm run type-check
-
-# Clean build artifacts
-npm run clean
-```
+3. **Export static site** (optional):
+   ```bash
+   npm run export
+   ```
 
 ## 📁 Project Structure
 
 ```
 kpp-presentation/
-├── components/           # Reusable React components
-│   ├── EnterpriseNavBar.js
-│   ├── ExampleChart.js
-│   ├── HomeSection.js
-│   └── ...
-├── pages/               # Next.js pages (file-based routing)
-│   ├── index.js         # Home page
-│   ├── _app.js          # App component
-│   ├── contact.js
-│   └── ...
-├── public/              # Static assets
-│   ├── images/          # Image assets
-│   └── ...
-├── styles/              # Global styles
-│   └── globals.css
-├── scripts/             # Utility scripts
-│   └── copy-assets.js
-└── ...
+├── components/          # Reusable React components
+│   ├── ExampleChart.js # Data visualization components
+│   ├── NavBar.js       # Navigation component
+│   └── SlideLayout.js  # Presentation slide layouts
+├── pages/              # Next.js pages
+│   ├── index.js        # Home page
+│   ├── technology/     # Technology section pages
+│   ├── slides/         # Presentation slides
+│   └── _app.js         # App configuration
+├── public/             # Static assets
+│   ├── images/         # Image assets
+│   ├── videos/         # Video assets
+│   └── solutions/      # Solution images
+├── styles/             # CSS and styling
+│   └── globals.css     # Global styles
+└── lib/                # Utility functions
+    └── devUtils.js     # Development utilities
 ```
 
-## 🎨 Styling
+## 🎨 Design System
 
-The project uses a custom design system with:
+The website uses a comprehensive design system with:
 
-- **CSS Variables**: Defined in `styles/globals.css`
-- **Component-Scoped Styles**: Using `<style jsx>` blocks
+- **Color Palette**: Deep Engineering brand colors
+- **Typography**: Inter font family with consistent hierarchy
+- **Components**: Reusable UI components
 - **Responsive Design**: Mobile-first approach
-- **Accessibility**: WCAG compliant features
+- **Dark Mode Ready**: CSS variables for easy theming
 
-### Color Palette
+## 📊 Available Pages
 
-```css
---color-primary: #2A57A5      /* Deep Blue */
---color-accent: #2563EB       /* Cobalt Blue */
---color-background: #FAFAFA   /* Paper White */
---color-surface: #FFFFFF      /* Pure White */
---color-text: #1E293B         /* Charcoal Gray */
-```
+- **Home** (`/`) - Main landing page with hero section
+- **Summary** (`/summary`) - Executive summary
+- **Services** (`/services`) - Service offerings
+- **Technology** (`/technology`) - Technical details
+- **Projects** (`/projects`) - Case studies and projects
+- **Performance** (`/performance`) - Performance metrics
+- **Timeline** (`/timeline`) - Development timeline
+- **Contact** (`/contact`) - Contact information
 
-## 🧩 Key Components
+## 🔧 Available Scripts
 
-- **EnterpriseNavBar**: Professional navigation with dropdowns
-- **HomeSection**: Reusable section component for home page
-- **ExampleChart**: Interactive charts using Recharts
-- **SlideLayout**: Layout component for presentation slides
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors
+- `npm run type-check` - Run TypeScript type checking
 
-## 📱 Pages
+## 🌟 Key Components
 
-- **Home** (`/`): Landing page with hero section and key information
-- **Technology** (`/technology`): Technical specifications and details
-- **Applications** (`/applications`): Use cases and implementations
-- **Contact** (`/contact`): Contact information and forms
-- **Demo** (`/demo`): Interactive demonstrations
+### Navigation System
+- Enterprise-grade navigation with dropdowns
+- Search functionality
+- Mobile-responsive design
+- Accessibility features
 
-## 🔧 Configuration
+### Chart System
+- Interactive data visualization
+- Multiple chart types (Line, Bar, Pie)
+- Responsive design
+- Accessibility support
 
-### Environment Variables
+### Slide System
+- Presentation slide layouts
+- MDX support for rich content
+- Navigation between slides
+- Professional styling
 
-Create a `.env.local` file for local development:
+## 🚀 Performance Features
 
-```env
-# Add any environment variables here
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
+- **Image Optimization**: Automatic image optimization with Next.js
+- **Code Splitting**: Automatic code splitting for faster loading
+- **Static Generation**: Pre-rendered pages for better SEO
+- **Lazy Loading**: Components and images loaded on demand
 
-### Next.js Configuration
+## 🔐 Security Features
 
-Key configurations in `next.config.js`:
+- **Content Security Policy**: Configured for security
+- **Input Sanitization**: Safe handling of user inputs
+- **Environment Variables**: Secure configuration management
 
-- Image optimization enabled
-- Security headers
-- Performance optimizations
+## 📱 Mobile Support
 
-## 🚀 Deployment
+- Responsive design for all screen sizes
+- Touch-friendly navigation
+- Mobile-optimized images
+- Progressive Web App ready
 
-### Vercel (Recommended)
+## 🎯 SEO Optimization
 
-1. Push to GitHub
-2. Connect repository to Vercel
-3. Deploy automatically on push
+- Meta tags optimization
+- Open Graph support
+- Structured data markup
+- Sitemap generation
+- Fast loading times
 
-### Manual Deployment
+## 🛠️ Customization
 
-1. Build the project: `npm run build`
-2. Start the server: `npm start`
-3. Deploy the `.next` folder to your hosting provider
+### Adding New Pages
+1. Create a new file in the `pages/` directory
+2. Add navigation links in `components/NavBar.js`
+3. Style components in `styles/globals.css`
 
-## 🧪 Development Guidelines
+### Updating Content
+1. Edit page content directly in the respective files
+2. Update images in the `public/` directory
+3. Modify styles in the global CSS file
 
-### Code Quality
-
-- Follow ESLint rules (configured in `.eslintrc.json`)
-- Use TypeScript for type safety
-- Write accessible HTML with proper ARIA labels
-- Optimize images and use Next.js Image component
-
-### Performance
-
-- Lazy load components when possible
-- Optimize bundle size
-- Use appropriate image formats (WebP, AVIF)
-- Monitor Core Web Vitals
+### Adding Charts
+1. Use the `ExampleChart` component
+2. Pass data and chart type as props
+3. Customize styling as needed
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
-1. **Port already in use**: Change port with `npm run dev -- -p 3001`
-2. **Build errors**: Run `npm run clean` and rebuild
-3. **Image issues**: Ensure images are in `public/images/` directory
+1. **Port already in use**: Next.js will automatically use the next available port
+2. **Image loading issues**: Check file paths and formats
+3. **Build errors**: Run `npm run lint` to check for code issues
 
-### Getting Help
+### Development Tips
 
-1. Check the console for error messages
-2. Verify all dependencies are installed
-3. Ensure Node.js version compatibility
+- Use the browser developer tools for debugging
+- Check the console for any JavaScript errors
+- Verify environment variables are set correctly
 
 ## 📄 License
 
-This project is proprietary software for Deep Engineering Co.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/new-feature`
-3. Commit changes: `git commit -am 'Add new feature'`
-4. Push to branch: `git push origin feature/new-feature`
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
 5. Submit a pull request
 
 ## 📞 Support
 
-For technical support or questions, contact:
-- Email: info@deep-engineering.de
-- Website: [Deep Engineering Co.](https://deep-engineering.de)
+For technical support or questions:
+- Email: [contact information]
+- Documentation: See `/docs` folder for detailed guides
+- Issues: Use GitHub issues for bug reports and feature requests
 
 ---
 
-**Built with ❤️ by Deep Engineering Co.**
+**Deep Engineering Co.** - Pioneering sustainable energy solutions with Kinetic Power Plant technology.

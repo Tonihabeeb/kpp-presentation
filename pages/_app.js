@@ -1,15 +1,23 @@
-import '../styles/globals.css';
+import '../styles/enhanced-globals.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { suppressKnownWarnings, enableDevelopmentMode } from '../lib/devUtils';
 
 function MyApp({ Component, pageProps }) {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState(null);
-  const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
+
+  // Initialize development utilities
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      suppressKnownWarnings();
+      enableDevelopmentMode();
+    }
+  }, []);
 
   // Close dropdowns when clicking outside or route changes
   useEffect(() => {
@@ -25,22 +33,6 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-  }, [router.pathname]);
-
-  // Handle scroll detection for navigation transparency
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
-    };
-
-    // Only add scroll listener on home page
-    if (router.pathname === '/') {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    } else {
-      setIsScrolled(true); // Always solid on non-home pages
-    }
   }, [router.pathname]);
 
   // Cleanup timeout on unmount
@@ -130,13 +122,19 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div className="app-container">
-      <nav className="professional-navbar" data-transparent={router.pathname === '/' && !isScrolled} suppressHydrationWarning>
+      <nav className="professional-navbar" data-transparent="true" suppressHydrationWarning>
         <div className="nav-container">
           {/* Logo */}
           <div className="nav-logo">
             <Link href="/" className="logo-link">
-              <Image src="/images/deep-engineering-logo.png" alt="Deep Engineering" className="logo" width={40} height={40} />
-              <span className="logo-text">Deep Engineering</span>
+              <Image 
+                src="/images/deep-engineering-logo-full-height.svg" 
+                alt="Deep Engineering - Kinetic Power Solutions" 
+                className="logo" 
+                width={220} 
+                height={70}
+                style={{ width: 'auto', height: '60px' }}
+              />
             </Link>
           </div>
 

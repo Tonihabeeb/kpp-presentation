@@ -5,7 +5,32 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'], // recognize MDX pages
   
+  // TypeScript configuration
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
   images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3003',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.siemens-energy.com',
+        pathname: '/**',
+      },
+    ],
+    // Legacy domains config for backward compatibility
     domains: [
       'localhost', 
       'static.siemens-energy.com',

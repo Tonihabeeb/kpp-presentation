@@ -28,8 +28,19 @@ export default function ExampleChart({ type = 'line', data = performanceData, ti
             aria-label={`Line chart showing ${title}. The chart displays performance data over 6 months.`}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
+            <XAxis 
+              dataKey="month" 
+              tickLine={true}
+              axisLine={true}
+              mirror={false}
+              orientation="bottom"
+            />
+            <YAxis 
+              tickLine={true}
+              axisLine={true}
+              mirror={false}
+              orientation="left"
+            />
             <Tooltip />
             <Legend />
             <Line type="monotone" dataKey="efficiency" stroke="#8884d8" name="Efficiency (%)" />
@@ -46,8 +57,19 @@ export default function ExampleChart({ type = 'line', data = performanceData, ti
             aria-label={`Bar chart showing ${title}. The chart compares efficiency, output, and cost metrics across months.`}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
+            <XAxis 
+              dataKey="month" 
+              tickLine={true}
+              axisLine={true}
+              mirror={false}
+              orientation="bottom"
+            />
+            <YAxis 
+              tickLine={true}
+              axisLine={true}
+              mirror={false}
+              orientation="left"
+            />
             <Tooltip />
             <Legend />
             <Bar dataKey="efficiency" fill="#8884d8" name="Efficiency (%)" />

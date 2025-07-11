@@ -1,22 +1,71 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Summary', href: '/summary' },
-  { label: 'Services', href: '/services' },
-  { label: 'Technology', href: '/technology' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Performance', href: '/performance' },
-  { label: 'Timeline', href: '/timeline' },
-  { label: 'Contact', href: '/contact' },
+  { label: '🏠 Home', href: '/' },
+  { 
+    label: '🔬 Technology', 
+    href: '/technology',
+    dropdown: [
+      { label: 'Core Technology', href: '/technology/core' },
+      { label: 'Technical Specifications', href: '/technology/specifications' },
+      { label: 'Performance Data', href: '/technology/performance' },
+      { label: 'Technology Overview', href: '/technology/overview' },
+      { label: 'Technology Comparison', href: '/technology/comparison' }
+    ]
+  },
+  { 
+    label: '📋 Presentation', 
+    href: '/presentation',
+    dropdown: [
+      { label: 'Slide 1 - Introduction', href: '/slides/1' },
+      { label: 'Slide 2 - Technology', href: '/slides/2' },
+      { label: 'Slide 3 - Performance', href: '/slides/3' },
+      { label: 'Slide 4 - Implementation', href: '/slides/4' },
+      { label: 'Slide 5 - Conclusion', href: '/slides/5' },
+      { label: 'Full Presentation', href: '/presentation/full' }
+    ]
+  },
+  { 
+    label: '📊 Resources', 
+    href: '/resources',
+    dropdown: [
+      { label: 'Major Projects', href: '/resources/projects' },
+      { label: 'Performance Data', href: '/performance' },
+      { label: 'Economics', href: '/resources/economics' },
+      { label: 'Demo Materials', href: '/resources/demo' }
+    ]
+  },
+  { 
+    label: '🎓 Webinars', 
+    href: '/webinars',
+    dropdown: [
+      { label: 'Introduction to KPP', href: '/webinars/introduction' },
+      { label: 'Technology Comparison', href: '/webinars/comparison' },
+      { label: 'Financial Benefits', href: '/webinars/financial' }
+    ]
+  },
+  { 
+    label: '🏢 Company', 
+    href: '/company',
+    dropdown: [
+      { label: 'About Us', href: '/company/about' },
+      { label: 'Leadership', href: '/company/leadership' },
+      { label: 'Services', href: '/company/services' },
+      { label: 'Investors', href: '/company/investors' }
+    ]
+  },
+  { label: '🚀 Analytics', href: '/analytics' },
+  { label: '⚙️ Admin', href: '/administration' },
 ];
 
 export default function NavBar() {
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +74,14 @@ export default function NavBar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleDropdownToggle = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  const handleDropdownClose = () => {
+    setActiveDropdown(null);
+  };
 
   return (
     <nav 
@@ -37,10 +94,13 @@ export default function NavBar() {
           <Link href="/" aria-label="Deep Engineering - Home">
             <div className="brand-container">
               <div className="brand-logo">
-                <img 
+                <Image 
                   src="/images/deep-engineering-logo-main.png" 
                   alt="Deep Engineering - Kinetic Power Plant Technology" 
-                  className="logo-image" 
+                  className="logo-image"
+                  width={220}
+                  height={55}
+                  priority
                 />
               </div>
             </div>
@@ -65,19 +125,85 @@ export default function NavBar() {
             id="main-navigation"
             role="menubar"
           >
-            {navItems.map((item) => (
-              <li key={item.href} role="none">
-                <Link 
-                  href={item.href} 
-                  className={`nav-link ${router.pathname === item.href ? 'active' : ''} ${item.label === 'Contact' ? 'contact-cta' : ''}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  role="menuitem"
-                  aria-current={router.pathname === item.href ? 'page' : undefined}
-                >
-                  {item.label}
-                </Link>
+            {navItems.map((item, index) => (
+              <li key={item.href} role="none" className="nav-item">
+                {item.dropdown ? (
+                  <div 
+                    className="nav-dropdown"
+                    onMouseEnter={() => setActiveDropdown(index)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`nav-link dropdown-trigger ${router.pathname === item.href ? 'active' : ''}`}
+                      onClick={(e) => {
+                        // On mobile, toggle dropdown instead of navigating
+                        if (window.innerWidth <= 768) {
+                          e.preventDefault();
+                          setActiveDropdown(activeDropdown === index ? null : index);
+                        } else {
+                          setIsMobileMenuOpen(false);
+                          setActiveDropdown(null);
+                        }
+                      }}
+                      role="menuitem"
+                      aria-expanded={activeDropdown === index}
+                      aria-haspopup="true"
+                    >
+                      {item.label}
+                      <span className="dropdown-arrow">▼</span>
+                    </Link>
+                    <div className={`dropdown-menu ${activeDropdown === index ? 'open' : ''}`}>
+                      <div className="dropdown-content">
+                        {item.dropdown.map((subItem) => (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            className="dropdown-item"
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setActiveDropdown(null);
+                            }}
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`nav-link ${router.pathname === item.href ? 'active' : ''}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    role="menuitem"
+                    aria-current={router.pathname === item.href ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
+            <li role="none">
+              <Link
+                href="/contact"
+                className={`contact-cta ${router.pathname === '/contact' ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                role="menuitem"
+              >
+                📞 Contact
+              </Link>
+            </li>
+            <li role="none">
+              <Link
+                href="/quote"
+                className={`contact-cta ${router.pathname === '/quote' ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                role="menuitem"
+              >
+                💰 Get Quote
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -88,18 +214,19 @@ export default function NavBar() {
           top: 0;
           left: 0;
           right: 0;
-          background: rgba(255, 255, 255, 0.99);
-          backdrop-filter: blur(25px);
-          -webkit-backdrop-filter: blur(25px);
-          border-bottom: 1px solid rgba(229, 231, 235, 0.15);
+          background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(148, 163, 184, 0.1);
           z-index: 1000;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .professional-navbar.scrolled {
-          background: rgba(255, 255, 255, 1);
-          box-shadow: 0 1px 25px rgba(42, 87, 165, 0.04);
-          border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+          background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
+          border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .navbar-container {
@@ -109,7 +236,7 @@ export default function NavBar() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          height: 80px;
+          height: 85px;
         }
         
         .navbar-brand {
@@ -126,17 +253,40 @@ export default function NavBar() {
         }
         
         .brand-logo {
-          height: 50px;
+          height: 55px;
           display: flex;
           align-items: center;
           justify-content: center;
+          position: relative;
+        }
+        
+        .brand-logo::before {
+          content: '';
+          position: absolute;
+          inset: -3px;
+          background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+          border-radius: 12px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: -1;
+        }
+        
+        .brand-logo:hover::before {
+          opacity: 0.2;
         }
         
         .logo-image {
           height: 100%;
           width: auto;
-          max-width: 200px;
+          max-width: 220px;
           object-fit: contain;
+          filter: brightness(0) invert(1);
+          transition: all 0.3s ease;
+        }
+        
+        .brand-logo:hover .logo-image {
+          transform: scale(1.05);
+          filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
         }
         
         .navbar-menu {
@@ -157,21 +307,21 @@ export default function NavBar() {
         }
         
         .mobile-menu-toggle:hover {
-          background: rgba(42, 87, 165, 0.1);
+          background: rgba(59, 130, 246, 0.1);
         }
         
         .mobile-menu-toggle:focus {
-          outline: 2px solid var(--color-primary);
+          outline: 2px solid #3b82f6;
           outline-offset: 2px;
-          background: rgba(42, 87, 165, 0.05);
+          background: rgba(59, 130, 246, 0.05);
         }
         
         .mobile-menu-toggle span {
-          width: 20px;
+          width: 22px;
           height: 2px;
-          background: var(--color-text);
-          border-radius: 2px;
-          transition: all 0.3s ease;
+          background: #e2e8f0;
+          border-radius: 3px;
+          transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
         .mobile-menu-toggle.open span:nth-child(1) {
@@ -194,82 +344,218 @@ export default function NavBar() {
           gap: 0.5rem;
         }
         
+        .nav-item {
+          position: relative;
+        }
+        
+        .nav-dropdown {
+          position: relative;
+        }
+        
+        .dropdown-trigger {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        
+        .dropdown-arrow {
+          font-size: 0.7rem;
+          transition: transform 0.3s ease;
+          color: #94a3b8;
+        }
+        
+        .nav-dropdown:hover .dropdown-arrow,
+        .dropdown-menu.open ~ .dropdown-trigger .dropdown-arrow {
+          transform: rotate(180deg);
+          color: #3b82f6;
+        }
+        
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: rgba(15, 23, 42, 0.98);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(148, 163, 184, 0.2);
+          border-radius: 12px;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(59, 130, 246, 0.1);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          z-index: 1000;
+          min-width: 250px;
+          margin-top: 0.5rem;
+        }
+        
+        .dropdown-menu.open {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        
+        .dropdown-content {
+          padding: 1rem 0;
+        }
+        
+        .dropdown-item {
+          display: block;
+          padding: 0.75rem 1.5rem;
+          color: #e2e8f0;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          position: relative;
+          border-left: 3px solid transparent;
+        }
+        
+        .dropdown-item::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 0;
+          background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+          transition: width 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+          color: #ffffff;
+          background: rgba(59, 130, 246, 0.1);
+          border-left-color: #3b82f6;
+          transform: translateX(4px);
+        }
+        
+        .dropdown-item:hover::before {
+          width: 3px;
+        }
+        
         .nav-link {
           display: inline-flex;
           align-items: center;
-          padding: 0.75rem 1.25rem;
+          padding: 0.75rem 1.5rem;
           font-size: 0.95rem;
           font-weight: 500;
-          color: var(--color-text);
+          color: #e2e8f0;
           text-decoration: none;
-          border-radius: 10px;
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 12px;
+          transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           position: relative;
-          min-height: 44px; /* Accessibility: minimum touch target */
+          min-height: 44px;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        .nav-link::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+          border-radius: 12px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
         
         .nav-link:hover {
-          color: var(--color-primary);
-          background: rgba(42, 87, 165, 0.08);
-          transform: translateY(-1px);
+          color: #ffffff;
+          background: rgba(59, 130, 246, 0.1);
+          border-color: rgba(59, 130, 246, 0.3);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        .nav-link:hover::before {
+          opacity: 1;
         }
         
         .nav-link:focus {
-          outline: 2px solid var(--color-primary);
+          outline: 2px solid #3b82f6;
           outline-offset: 2px;
-          background: rgba(42, 87, 165, 0.1);
+          background: rgba(59, 130, 246, 0.15);
         }
         
         .nav-link.active {
-          color: var(--color-primary);
-          background: rgba(42, 87, 165, 0.12);
+          color: #ffffff;
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+          border-color: rgba(59, 130, 246, 0.4);
           font-weight: 600;
+          box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
         }
         
         .nav-link.active::after {
           content: '';
           position: absolute;
-          bottom: 4px;
-          left: 1.25rem;
-          right: 1.25rem;
+          bottom: 6px;
+          left: 1.5rem;
+          right: 1.5rem;
           height: 2px;
-          background: var(--color-primary);
+          background: linear-gradient(90deg, #3b82f6, #8b5cf6);
           border-radius: 2px;
         }
 
         .contact-cta {
-          background-color: var(--color-primary);
+          background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
           color: white;
           font-weight: 600;
-          padding: 0.75rem 1.5rem;
+          padding: 0.75rem 2rem;
           border-radius: 25px;
-          min-height: 44px; /* Accessibility: minimum touch target */
+          min-height: 44px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 2px 8px rgba(42, 87, 165, 0.25);
-          transition: all 0.2s ease;
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+          transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+        
+        .contact-cta::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0891b2 100%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: -1;
+        }
+        
+        .contact-cta::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+          transition: left 0.6s;
+          z-index: 2;
         }
         
         .contact-cta:hover {
-          background-color: var(--color-primary-hover);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(42, 87, 165, 0.3);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .contact-cta:hover::before {
+          opacity: 1;
+        }
+        
+        .contact-cta:hover::after {
+          left: 100%;
         }
         
         .contact-cta:focus {
-          outline: 2px solid var(--color-primary);
+          outline: 2px solid #3b82f6;
           outline-offset: 2px;
         }
 
-        .contact-cta:hover {
-          background-color: #2A57A5;
-          color: #F3F4F6;
-        }
-
         .contact-cta.active {
-          background-color: #2A57A5;
-          color: #F3F4F6;
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0891b2 100%);
         }
         
         /* Accessibility: Focus styles */
@@ -335,18 +621,18 @@ export default function NavBar() {
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(229, 231, 235, 0.4);
-            box-shadow: 0 8px 25px rgba(42, 87, 165, 0.1);
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             flex-direction: column;
             gap: 0;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             transform: translateY(-100%);
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           }
           
           .navbar-links.open {
@@ -361,6 +647,38 @@ export default function NavBar() {
             font-size: 1rem;
             min-height: 48px; /* Larger touch targets on mobile */
             border-radius: 12px;
+          }
+          
+          /* Mobile dropdown styles */
+          .dropdown-menu {
+            position: static;
+            background: rgba(30, 41, 59, 0.95);
+            border: none;
+            border-radius: 8px;
+            margin: 0.5rem 1rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-width: auto;
+          }
+          
+          .dropdown-content {
+            padding: 0.5rem 0;
+          }
+          
+          .dropdown-item {
+            padding: 0.75rem 2rem;
+            margin: 0;
+            font-size: 0.9rem;
+            border-left: none;
+            border-radius: 0;
+          }
+          
+          .dropdown-item:hover {
+            transform: none;
+            background: rgba(59, 130, 246, 0.15);
+          }
+          
+          .dropdown-arrow {
+            margin-left: auto;
           }
 
           .contact-cta {

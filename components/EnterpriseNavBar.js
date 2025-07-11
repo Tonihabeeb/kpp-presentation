@@ -101,7 +101,14 @@ export default function EnterpriseNavBar() {
         {/* Logo Section */}
         <div className="nav-logo">
           <Link href="/" className="logo-link">
-            <Image src="/images/deep-engineering-logo.png" alt="Deep Engineering Co." className="logo-image" width={40} height={40} />
+            <Image 
+              src="/images/deep-engineering-logo.png" 
+              alt="Deep Engineering Co." 
+              className="logo-image" 
+              width={40} 
+              height={40}
+              style={{ width: 'auto', height: 'auto' }}
+            />
             <div className="logo-text">
               <span className="company-name">Deep Engineering Co.</span>
               <span className="tagline">Kinetic Power Solutions</span>
