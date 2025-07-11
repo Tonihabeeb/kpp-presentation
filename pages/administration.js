@@ -8,7 +8,6 @@ export default function Administration() {
   const [securitySettings, setSecuritySettings] = useState({});
   const [maintenanceSchedule, setMaintenanceSchedule] = useState([]);
   const [systemLogs, setSystemLogs] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   // Initialize admin data
   useEffect(() => {

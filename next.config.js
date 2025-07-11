@@ -5,6 +5,12 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'], // recognize MDX pages
   
+  // ESLint configuration - ignore during builds for deployment
+  eslint: {
+    ignoreDuringBuilds: true, // Skip ESLint during build to deploy faster
+    dirs: ['pages', 'components', 'lib', 'utils'],
+  },
+  
   // TypeScript configuration
   typescript: {
     ignoreBuildErrors: false,

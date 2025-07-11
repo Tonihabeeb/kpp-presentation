@@ -1,8 +1,5 @@
 import Head from 'next/head';
-import IndustrialNavbar from '../components/IndustrialNavbar';
-import IndustrialHero from '../components/IndustrialHero';
-import { MetricsGrid } from '../components/DataVisualization';
-import IndustrialFooter from '../components/IndustrialFooter';
+import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';

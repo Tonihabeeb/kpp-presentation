@@ -75,14 +75,6 @@ export default function NavBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDropdownToggle = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
-  };
-
-  const handleDropdownClose = () => {
-    setActiveDropdown(null);
-  };
-
   return (
     <nav 
       className={`professional-navbar ${hasScrolled ? 'scrolled' : ''}`}
