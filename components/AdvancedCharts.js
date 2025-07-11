@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+
+const colorSchemes = {
+  primary: { main: '#1B365D', gradient: ['#1B365D', '#2A4A70'] },
+  secondary: { main: '#FF6B35', gradient: ['#FF6B35', '#FF8A5C'] },
+  accent: { main: '#4ECDC4', gradient: ['#4ECDC4', '#6FD9D2'] },
+  success: { main: '#38A169', gradient: ['#38A169', '#48BB78'] }
+};
 
 const RealTimeChart = ({ title, dataPoints, type = 'line', color = 'primary' }) => {
   const [data, setData] = useState(dataPoints || []);
   const [isLive, setIsLive] = useState(false);
   const canvasRef = useRef(null);
-
-  const colorSchemes = {
-    primary: { main: '#1B365D', gradient: ['#1B365D', '#2A4A70'] },
-    secondary: { main: '#FF6B35', gradient: ['#FF6B35', '#FF8A5C'] },
-    accent: { main: '#4ECDC4', gradient: ['#4ECDC4', '#6FD9D2'] },
-    success: { main: '#38A169', gradient: ['#38A169', '#48BB78'] }
-  };
 
   useEffect(() => {
     if (isLive) {
@@ -39,7 +39,7 @@ const RealTimeChart = ({ title, dataPoints, type = 'line', color = 'primary' }) 
     }
   }, [isLive]);
 
-  const drawChart = () => {
+  const drawChart = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas || data.length === 0) return;
 
@@ -147,11 +147,11 @@ const RealTimeChart = ({ title, dataPoints, type = 'line', color = 'primary' }) 
         ctx.fillText(point.time, x, height - 10);
       }
     });
-  };
+  }, [data, color, type]);
 
   useEffect(() => {
     drawChart();
-  }, [data, color, type]); // drawChart is stable and doesn't need to be in dependencies
+  }, [drawChart]);
 
   return (
     <div className="realtime-chart">
