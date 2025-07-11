@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import { useScrollAnimation, useMouseTracking, useDebounce } from '../hooks/useAdvancedInteractions';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -54,20 +55,39 @@ export default function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [navRef, navVisible] = useScrollAnimation();
+  const mousePosition = useMouseTracking();
+  const debouncedMousePosition = useDebounce(mousePosition, 50);
 
   useEffect(() => {
     const handleScroll = () => {
-      setHasScrolled(window.scrollY > 10);
+      const scrolled = window.scrollY > 50; // Increased threshold for better effect
+      setHasScrolled(scrolled);
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  }, [router.asPath]);
+
+  // Determine if we're on the homepage
+  const isHomePage = router.pathname === '/';
+
   return (
     <nav 
-      className={`professional-navbar ${hasScrolled ? 'scrolled' : ''}`}
+      ref={navRef}
+      className={`professional-navbar ${hasScrolled ? 'scrolled' : ''} ${navVisible ? 'animate-in' : ''}`}
+      data-transparent={isHomePage && !hasScrolled ? "true" : "false"}
       role="navigation"
       aria-label="Main navigation"
+      style={{
+        transform: `translateX(${debouncedMousePosition.x * 0.01}px)`
+      }}
     >
       <div className="navbar-container">
         <div className="navbar-brand">
